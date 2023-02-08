@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    gap: 8px;
+    &.justify-between {
+        justify-content: space-between;
+    }
+}
+
+.info-box {
+    color: #89999b;
+    line-height: 1.29;
+    text-align: center;
+    background: #e9eff0;
+    @include t-mobile {
+        margin: 75px auto 0;
+        padding: 10px 0;
+        @include font-size-mo(14);
+    }
+    @include desktop2 {
+        margin: 78px auto 0;
+        padding: 10px 0;
+        max-width: 1120px;
+        @include font-size(16);
+    }
+}

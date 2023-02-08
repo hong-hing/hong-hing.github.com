@@ -1,0 +1,153 @@
+body.overlay {
+    overflow: hidden;
+    height: 100%;
+}
+.dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-bk, 0.3);
+
+    &.none-event {
+        pointer-events: none;
+    }
+}
+
+.layer {
+    opacity: 0;
+    visibility: hidden;
+    // display: none;
+    overflow: hidden;
+    z-index: 100;
+    position: fixed;
+    height: 0;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        height: $vh100;
+        @include t-mobile {
+            align-items: flex-end;
+        }
+        @include desktop2 {
+            align-items: center;
+        }
+        .layer-container {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    &.center {
+        align-items: center;
+        .layer-container {
+            margin: 0 24px;
+            border-radius: 16px;
+        }
+    }
+    .dimmed {
+        z-index: 110;
+    }
+    &-container {
+        z-index: 120;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: safe(bottom);
+        max-width: 800px;
+        width: 100%;
+        background: $color-wh;
+        box-sizing: border-box;
+        box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.3);
+        transform: translate3d(0, 100%, 0);
+        transition: transform .15s linear;
+        @include t-mobile {
+            max-height: calc(100vh - 100px);
+            max-height: calc(#{$vh100} - 100px);
+            border-radius: 10px 10px 0 0;
+        }
+        @include desktop2 {
+            max-height: calc(100vh - 200px);
+            max-height: calc(#{$vh100} - 200px);
+            border-radius: 16px;
+        }
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            @include font-size(20);
+            font-weight: 700;
+        }
+        .btn-icon {
+            font-size: 1.3rem;
+        }
+        @include t-mobile {
+            padding: 35px 20px 15px;
+        }
+        @include desktop2 {
+            padding: 50px 40px 25px;
+        }
+    }
+    &-contents {
+        overflow-y: auto;
+        @include t-mobile {
+            padding: 15px 20px 35px;
+        }
+        @include desktop2 {
+            padding: 25px 40px 50px;
+        }
+    }
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px 20px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $color-wh 21.74%);
+        .btn {
+            flex: 1;
+            height: 52px;
+            line-height: 52px;
+            font-weight: 500;
+            border-radius: 4px;
+            & + .btn {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // 알럿용 레이어
+    &-alert {
+        .layer-container {
+            max-width: 400px;
+        }
+        .layer-contents {
+            font-size: 1rem;
+            text-align: center;
+            @include t-mobile {
+                padding: 24px 20px;
+            }
+            @include desktop2 {
+                padding: 40px 40px 24px;
+            }
+        }
+    }
+
+    &-terms {
+        .layer-container {
+            @include t-mobile {
+                @include font-size-mo(14);
+            }
+            @include desktop2 {
+                @include font-size(14);
+            }
+        }
+    }
+}

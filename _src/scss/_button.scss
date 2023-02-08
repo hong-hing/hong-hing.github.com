@@ -1,0 +1,206 @@
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+    transition: color .3s;
+
+    @include t-mobile {
+        padding: 0 30px;
+        height: 74px;
+        font-size: 14px;
+        line-height: 72px;
+    }
+    @include desktop2 {
+        padding: 0 38px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        border-radius: 25px;
+    }
+    .icon {
+        margin-right: 8px;
+    }
+    &.disabled {
+        pointer-events: none;
+    }
+    &-primary {
+        color: $color-gray-100;
+        border: 1px solid $color-gray-200;
+        &:hover {
+            border-color: $color-gray-100;
+        }
+    }
+    &-secondary {
+        color: $color-purple-100;
+        border: 1px solid;
+        border-image-source: linear-gradient(to right, #f29f53 0%, #e51b7f 51%, #a6379b 100%);
+        border-image-slice: 1;
+        &:hover {
+            border-color: $color-gray-100;
+        }
+    }
+    &-tertiary {
+        margin: 0 auto;
+        padding: 0 84px;
+        max-width: 420px;
+        height: 56px;
+        color: $color-wh;
+        line-height: 56px;
+        text-decoration: underline;
+        background: $color-red-100;
+        border-radius: 28px;
+        @include t-mobile {
+            font-size: 16px;
+            text-decoration: none;
+        }
+    }
+    &-underline {
+        color: $color-gray-500;
+        text-decoration: underline;
+    }
+    &-normal {
+        font-size: 13px;
+        color: $color-gray-400;
+        border: 1px solid $color-gray-400;
+        &.b-200 {
+            border-color: $color-gray-200;
+        }
+        @include t-mobile {
+            padding: 0 12px;
+            height: 34px;
+            line-height: 34px;
+            &.active-kr {
+                .kr {
+                    color: $color-gray-100;
+                }
+            }
+            &.active-en {
+                .en {
+                    color: $color-gray-100;
+                }
+            }
+        }
+        @include desktop2 {
+            color: $color-gray-400;
+            &.active-kr {
+                .kr {
+                    color: $color-wh;
+                }
+            }
+            &.active-en {
+                .en {
+                    color: $color-wh;
+                }
+            }
+        }
+        .p-sub & {
+            border-color: $color-gray-400;
+        }
+    }
+    &-top {
+        font-size: 14px;
+        .icon {
+            display: block;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.btn-icon {
+    display: inline-block;
+    padding: 6px 3px;
+    width: 28px;
+    height: 28px;
+    text-align:center;
+    vertical-align: middle;
+    background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    box-sizing: border-box;
+
+    &.hamberger {
+        width: 36px;
+        height: 34px;
+        &.hamberger {
+            .bar {
+                position: relative;
+                display: block;
+                width: 20px;
+                height: 1.5px;
+                background: $color-gray-100;
+                transition: background .2s ease-out;
+                // background: url($bg_url + "btn_hamberger.svg");      // 디자인 파일
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 30px;
+                    height: 100%;   
+                    background: $color-gray-100;
+                    transition: all .2s ease-out;
+                }
+                &::before {
+                    top: 8px;
+                }
+                &::after {
+                    top: -8px;
+                }
+            }
+            &.active {
+                .bar {
+                    background: transparent;
+                    &::before {
+                        transform: rotate(-45deg);
+                    }
+                    &::after {
+                        transform: rotate(45deg);
+                    }
+                    &::before,
+                    &::after {
+                        top: 0;
+                        background: $color-wh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-area {
+    margin-top: 32px;
+    text-align: center;
+    // padding: 20px 20px 20px;
+    // padding-bottom: safe(bottom, 20px);
+    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $color-wh 21.74%);
+    @include t-mobile {
+        .btn {
+            padding: 0;
+            width: 100%;
+            & + .btn {
+                margin-top: 12px;
+            }
+        }
+    }
+    @include desktop2 {
+        .btn {
+            & + .btn {
+                margin-left: 10px;
+            }
+        }
+    }
+    &.fixed {
+        z-index: 20;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // input focused
+        .is-focused & {
+            position: static;
+        }
+    }
+}

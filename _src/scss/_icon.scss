@@ -1,0 +1,72 @@
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+
+    &.top {
+        width: 28px;
+        height: 14px;
+        background-image: url($bg_url + "ico_top.svg");
+    }
+
+    $ico-membership: "private", "corkage", "gift", "event", "keep";
+    &.benefit {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        @each  $item in $ico-membership {
+            &.#{$item} {
+                background-image: url($bg_url + "ico_#{$item}.svg");
+
+                @include t-mobile {
+                    mask-image: url($bg_url + "ico_#{$item}.svg");
+                    mask-size: cover;
+                    background: $color-gray-300;
+                }
+                @include desktop2 {
+                    mask-image: url($bg_url + "ico_#{$item}.svg");
+                    mask-size: cover;
+                    background: $color-gray-600;
+                }
+            }
+        }
+    }
+
+    @for $i from 1 through 3 {
+        &.profile0#{$i} {
+    
+            background-image: url($bg_url + "ico_profile0#{$i}.svg");
+            @include t-mobile {
+                width: 80px;
+                height: 80px;
+                background-size: 80px auto;
+            }
+            @include desktop2 {
+                width: 120px;
+                height: 120px;
+                background-size: 120px auto;
+            }
+        }
+    }
+
+    @for $i from 1 through 4 {
+        &.partner#{$i} {
+    
+            background-image: url($bg_url + "ico_partner0#{$i}.svg");
+            @include t-mobile {
+                width: 71px;
+                height: 70px;
+                background-size: 71px auto;
+            }
+            @include desktop2 {
+                width: 120px;
+                height: 120px;
+                background-size: 120px auto;
+            }
+        }
+    }
+}

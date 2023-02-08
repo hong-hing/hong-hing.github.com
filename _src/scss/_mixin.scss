@@ -1,0 +1,176 @@
+$font-device: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+$font-serif: "Noto Serif KR", "NotoSerifKR", Times, "Times New Roman", Georgia, serif;
+$font-sansserif: "Jost", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+
+$bg_url: "../images/";
+
+$color-gray-000: #111;
+$color-gray-100: #1b1c1c;          // default color
+$color-gray-200: #444;
+$color-gray-300: #666;
+$color-gray-400: #999;
+$color-gray-500: #aaa;
+$color-gray-600: #ccc;
+$color-gray-700: #d9d9d9;
+$color-gray-800: #ddd;
+
+$color-bk: #000;
+$color-wh: #fff;
+
+$color-purple-100: #c50bc9;
+$color-red-100: #ff3d00;
+
+
+$color-gray-700: #f9f9f9;
+$color-error: #e85257;
+$color-green-100: #12bd7e;      // primary
+$color-yellow-100: #ffe017;     // secondary
+$color-blue-100: #3881f3;
+
+@mixin color-green_gr {
+    background-image: linear-gradient(223deg, #12bd7e 14%, #4fc1a8 85%);
+}
+
+// 640, 960 x 540, 1024 x 640, 1366 x 768, 1920
+$breakpoint-small: 360px;
+$breakpoint-mobile: 640px;
+$breakpoint-tablet: 1280px;
+$breakpoint-desktop: 1366px;    // ipad pro 12.9inch
+
+@mixin mobile-small {
+    @media (max-width: #{$breakpoint-small - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$breakpoint-mobile - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin t-mobile {
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop2 {
+    @media (min-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+// @function px2rem($font_size, $base_font_size: 20) {
+//     @return $font_size / $base_font_size + rem;
+// }
+
+@mixin font-size($sizeValue: 20) {
+    font-size: $sizeValue + px;
+    font-size: $sizeValue / 20 + rem;
+    
+}
+
+@mixin font-size-mo($sizeValue: 15) {
+    font-size: $sizeValue + px;
+    font-size: $sizeValue / 15 + rem;
+}
+
+
+
+// font-size
+$base_font_size: 15px;
+
+// device height
+$vh100: calc(var(--vh, 1vh) * 100);
+
+// 여백
+$spacer-row: 24px;
+$spacer: 8, 10, 16, 20, 24, 32, 36, 40;
+@each $num in $spacer {
+    .mt-#{$num} {
+        margin-top: #{$num} + "px";
+    }
+}
+
+@mixin blind() {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+// 노치대응
+$safeAreaMap: (
+    'top': (
+        env: env(safe-area-inset-top),
+    ),
+    'right': (
+        env: env(safe-area-inset-right),
+    ),
+    'bottom': (
+        env: env(safe-area-inset-bottom),
+    ),
+    'left': (
+        env: env(safe-area-inset-left),
+    )
+);
+
+$safe-top:map-get($safeAreaMap,"top");
+$safe-right: map-get($safeAreaMap,"right");
+$safe-bottom: map-get($safeAreaMap,"bottom");
+$safe-left: map-get($safeAreaMap,"left");
+
+// * safe(bottom, 값, width%, env);
+// * safe-area-inset 처리
+// * $dir - 방향(all, top, right, bottom, left, 생략가능)
+// * $ios - env, constant
+// * $value - 더해질 값(생략가능)
+// * $percent - height나 width값 계산 시(예 100%)
+@function safe($dir: all, $value: 0, $percent: 0, $ios: 'env') {
+    @if ($dir == all) {
+        @if ($value > 0) {
+            @return calc(#{$value} + #{map-get($safe-top, $ios)}) calc(#{$value} + #{map-get($safe-right, $ios)}) calc(#{$value} + #{map-get($safe-bottom, $ios)}) calc(#{$value} + #{map-get($safe-left, $ios)});
+        }
+        @else if ($value < 0) {
+            @return calc((#{-$value} + #{map-get($safe-top, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-right, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-bottom, $ios)}) * -1) calc((#{-$value} + #{map-get($safe-left, $ios)}) * -1);
+        }
+        @else {
+            @return map-get($safe-top, $ios) map-get($safe-right, $ios) map-get($safe-bottom, $ios) map-get($safe-left, $ios);
+        }
+    }
+    @else {
+        @if ($value > 0) {
+            @if($percent > 0) {
+                @return calc(#{$percent} - #{$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)});
+            } @else {
+                @return calc( #{$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}); 
+            }
+        }
+        @else if ($value < 0) {
+            @if($percent > 0) {
+                @return calc((#{$percent} - #{-$value} - #{map-get(map-get($safeAreaMap,$dir), $ios)}));
+            } @else {
+                @return calc((#{-$value} + #{map-get(map-get($safeAreaMap,$dir), $ios)}) * -1);
+            }
+        }
+        @else {
+            @return map-get(map-get($safeAreaMap,$dir), $ios);
+        }
+    }
+}

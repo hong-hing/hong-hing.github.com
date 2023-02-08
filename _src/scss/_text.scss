@@ -1,0 +1,60 @@
+
+.section-title {
+    font-weight: 500;
+    line-height: 1.52;
+    @include t-mobile {
+        @include font-size-mo(48);
+    }
+    @include desktop2 {
+        @include font-size(64);
+        color: $color-wh;
+    }
+    strong {
+        font-weight: 500;
+    }
+}
+.text {
+    &-link {
+        text-decoration: underline;
+    }
+    &-info {
+        color: $color-gray-300;
+    }
+    &-desc {
+        @include font-size-mo(16);
+    }
+    &-primary {
+        color: $color-green-100;
+    }
+    &-secondary {
+        color: $color-yellow-100;
+    }
+}
+
+@mixin multiEllipse ($line: 2) {
+    -webkit-line-clamp: $line;
+    height: calc(1.43 * #{$line}em);
+}
+@for $var from 2 through 5 {
+    .text-ellipsis-#{$var} {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        line-height: 1.43;
+        @include multiEllipse( #{$var} );
+    }
+}
+@mixin multi-el-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.43;
+    @include multiEllipse( 2 );
+}
+@mixin multi-el-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.43;
+    @include multiEllipse( 3 );
+}
