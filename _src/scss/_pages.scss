@@ -1,0 +1,765 @@
+.section {
+    .description {
+        @extend .font-serif;
+        font-weight: 300;
+        a {
+            color: inherit;
+        }
+    }
+    @include t-mobile {
+        &-inner {
+            padding: 32px 0 0;
+        }
+        .content {
+            padding: 0 30px;
+            & + .image-list {
+                margin-top: 32px;
+            }
+        }
+        &-title {
+            line-height: 1;
+            span {
+                display: block;
+                font-size: 40px;
+                color: $color-gray-300;
+            }
+        }
+        .description {
+            margin-top: 32px;
+            .head-desc {
+                font-size: 16px;
+                & + p {
+                    margin-top: 16px;
+                }
+            }
+            p:not(.head-desc) {
+                font-size: 14px;
+                color: $color-gray-300;
+                font-weight: 300;
+            }
+        }
+        .content, .history-list, .benefit-list {
+            padding: 0 30px;
+        }
+        .image-list, .history-list, .benefit-list {
+            
+        }
+        .image-list {
+            .one {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    }
+    @include tablet {
+        .content, .image-list, .history-list, .benefit-list {
+            margin: 0 auto;
+            max-width: 770px;
+            padding: 0 30px;
+        }
+        .image-list {
+            .one {
+                gap: 20px;
+                & + .one {
+                    margin-top: 20px;
+                }
+                figure {
+                    flex: 0 0 auto;
+                    width: calc(50% - 10px);
+                    max-width: 375px;
+                }
+            }
+        }
+    }
+    @include desktop2 {
+        text-align: center;
+        .content {
+            padding: 118px 0 93px;
+        }
+        .description {
+            margin: 58px auto 0;
+            max-width: 920px;
+            p {
+                font-size: 14px;
+                color: $color-gray-500;
+                word-break: keep-all;
+                &:first-child {
+                    margin-bottom: 24px;
+                    font-size: 24px;
+                    color: $color-wh;
+                }
+            }
+        }
+        .image-list {
+            margin: 0 auto;
+            padding-bottom: 330px;
+            max-width: 1168px;
+            & > div {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                & + div {
+                    margin-top: 400px;
+                }
+            }
+        }
+        figure {
+            width: 580px;
+            height: 580px;
+            background: rgba($color-wh, 0.3);
+            img {
+                width: 100%;
+            }
+        }
+    }
+    @include desktop {
+        .image-list {
+            // 좌우 여백이 부족해서 추가함  (좌: 60, 우:60)
+            max-width: calc(100vw - 120px - 120px);
+        }
+        figure {
+            width: calc((100vw - 8px - 120px - 120px) / 2);
+            height: calc((100vw - 8px - 120px - 120px) / 2);
+            background: rgba($color-wh, 0.3);
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-visual {
+        .video-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            video {
+                // position: absolute;
+                // top: 50%;
+                // left: 50%;
+                // width: auto;
+                // height: auto;
+                min-width: 100%;
+                min-height: 100%;
+                // transform: translate3d(-50%, -50%, 0);
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+        @include t-mobile {
+            position: relative;
+            .copy {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                padding: 0 30px 0 20px;
+                width: 100%;
+                max-width: 414px;
+                color: $color-wh;
+                box-sizing: border-box;
+                transform: translate3d(-50%, 0, 0);
+                span {
+                    &:not(.bar) {
+                        display: block;
+                        font-size: 28px;
+                        font-weight: 200;
+                    }
+                }
+                strong {
+                    display: block;
+                    margin-top: 12px;
+                    font-size: 30px;
+                    font-weight: 300;
+                    text-align: right;
+                }
+            }
+        }
+        @include mobile {
+            html[lang="en"] & {
+                .copy {
+                    span {
+                        font-size: 15px;
+                    }
+                    strong {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+         
+        @include tablet {
+            .copy {
+                max-width: 600px;
+                span {
+                    &:not(.bar) {
+                        font-size: 28px;
+                        font-size: 4vw;
+                    }
+                }
+                strong {
+                    font-size: 30px;
+                    font-size: 5vw;
+                }
+            }
+            html[lang="en"] & {
+                .copy {
+                    max-width: 770px;
+                    span:not(.bar) {
+                        font-size: 15px;
+                        font-size: 3vw;
+                    }
+                    strong {
+                        font-size: 20px;
+                        font-size: 4vw;
+                    }
+                }
+            }
+        }
+        @include desktop2 {
+            .copy {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: flex;
+                align-items: center;
+                padding: 0 56px;
+                width: calc(100vw - 180px);
+                max-width: 1144px;
+                font-size: 32px;
+                color: $color-wh;
+                font-weight: 300;
+                box-sizing: border-box;
+                transform: translate3d(calc(-50% + 90px), -50%, 0);
+                .bar {
+                    flex: 1;
+                    margin: 0 52px;
+                    height: 1px;
+                    background: $color-gray-700;
+                }
+                strong {
+                    display: block;
+                    font-size: 30px;
+                    text-align: right;
+                }
+            }
+        }
+        @include desktop {
+        }
+    }
+
+    &-opnng {
+        .section-title {
+            line-height:
+            span {
+                display: block;
+                color: $color-gray-300;
+            }
+        }
+        .description {
+            p {
+                & + p {
+                    margin-top: 16px;
+                }
+            }
+            
+        }
+        @include t-mobile {
+            .content {
+                padding-bottom: 80px;
+            }
+        }
+    }
+
+    &-wine {
+        .one {
+            position: relative;
+            .text-move {
+                position: absolute;
+                line-height: 1;
+                strong {
+                    display: block;
+                    font-weight: 400;
+                }
+                span {
+                }
+            }
+        }
+        @include t-mobile {
+        }
+        @include mobile {
+            .text-move {
+                opacity: 0;
+                overflow: hidden;
+                top: -130px;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                font-size: 72px;
+                font-size: 19vw;
+                color: $color-wh;
+                letter-spacing: -0.05em;
+                transform: translate3d(0, 150px, 0);
+                transition: transform 1.3s, opacity 1.3s;
+                strong, span {
+                    position: relative;
+                    width: 120%;
+                }
+                strong {
+                    left: -20px;
+                }
+                span {
+                    right: -40px;
+                }
+                // 스크롤
+                &.detect {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+        @include tablet {
+            .text-move {
+                opacity: 0;
+                top: -18px;
+                left: 40px;
+                text-align: center;
+                transform: translate3d(0, 150px, 0);
+                transition: transform 1.3s, opacity 1.3s;
+                strong {
+                    margin-bottom: 16px;
+                    color: $color-gray-800;
+                    font-size: 48px;
+                }
+                span {
+                    font-size: 32px;
+                    color: $color-gray-400;
+                }
+                // 스크롤
+                &.detect {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+        @include desktop2 {
+            .text-move {
+                opacity: 0;
+                position: absolute;
+                top: -24px;
+                left: 126px;
+                text-align: center;
+                transform: translate3d(0, 150px, 0);
+                transition: transform 1.3s, opacity 1.3s;
+                strong {
+                    margin-bottom: 16px;
+                    color: $color-gray-800;
+                    font-size: 60px;
+                }
+                span {
+                    font-size: 48px;
+                    color: $color-gray-400;
+                }
+                // 스크롤
+                &.detect {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+        @include desktop {
+        }
+    }
+
+    &-cuisine {
+        .one {
+            position: relative;
+            .text-move {
+                line-height: 1;
+                strong {
+                    font-weight: 400;
+                }
+                span {
+                    display: block;
+                }
+            }
+        }
+        @include mobile {
+            .text-move {
+                overflow: hidden;
+                z-index: 10;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 72px;
+                font-size: 19vw;
+                strong, span {
+                    opacity: 0;
+                    position: relative;
+                    width: 120%;
+                    color: rgba($color-wh, 0.5);
+                    letter-spacing: -0.05em;
+                }
+                strong {
+                    left: 200px;
+                }
+                span {
+                    right: 200px;
+                }
+                // 스크롤
+                &.detect {
+                    strong, span {
+                        opacity: 1;
+                        transition: left 1.3s, right 1.3s, opacity 1.3s;
+                    }
+                    strong {
+                        left: -20px;
+                    }
+                    span {
+                        right: -40px;
+                    }
+                }
+            }
+        }
+        @include tablet {
+            .text-move {
+                overflow: hidden;
+                z-index: 10;
+                // position: absolute;
+                position: relative;
+                // bottom: -110px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: 52px;
+                width: 100%;
+                strong, span {
+                    opacity: 0;
+                    position: relative;
+                }
+                strong {
+                    left: -60px;
+                    font-size: 32px;
+                    // color: $color-gray-800;
+                }
+                span {
+                    right: -300px;
+                    margin: -10px auto 0;
+                    width: 400px;
+                    font-size: 48px;
+                    color: rgba($color-bk, 0.5);
+                }
+                // 스크롤
+                &.detect {
+                    strong, span {
+                        opacity: 1;
+                        transition: left 1.3s, right 1.3s, opacity 1.3s;
+                    }
+                    strong {
+                        left: 60px;
+                    }
+                    span {
+                        right: -68px;
+                    }
+                }
+            }
+        }
+        @include desktop2 {
+            .text-move {
+                z-index: 10;
+                position: absolute;
+                bottom: -110px;
+                left: 0;
+                right: 0;
+                strong, span {
+                    position: relative;
+                    opacity: 0;
+                }
+                strong {
+                    left: -400px;
+                    font-size: 32px;
+                    color: $color-gray-800;
+                }
+                span {
+                    right: -250px;
+                    margin: -10px auto 0;
+                    width: 400px;
+                    font-size: 48px;
+                    color: $color-gray-300;
+                }
+                // 스크롤
+                &.detect {
+                    strong, span {
+                        opacity: 1;
+                        transition: left 1.3s, right 1.3s, opacity 1.3s;
+                    }
+                    strong {
+                        left: -164px;
+                    }
+                    span {
+                        right: -68px;
+                    }
+                }
+            }
+        }
+        @include desktop {
+        }
+    }
+
+    &-history {
+        .section-title {
+            span {
+                display: block;
+                color: $color-gray-300;
+            }
+        }
+        @include t-mobile {
+            .history-list {
+                margin-top: 30px;
+                padding-bottom: 40px;
+                font-size: 16px;
+            }
+            .one + .one {
+                margin-top: 32px;
+            }
+            dd {
+                margin-top: 6px;
+                color: $color-gray-300;
+            }
+            dl {
+                div { 
+                    & + div {
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+        @include mobile {
+            .history-list {
+                figure {
+                    margin-top: 16px;
+                }
+            }
+        }
+        @include tablet {
+            .history-list {
+                margin: 58px auto 0;
+                .one {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    & + .one {
+                        margin-top: 48px;
+                    }
+                }
+                figure, dl {
+                    flex: 0 0 auto;
+                    width: 50%;
+                    box-sizing: border-box;
+                }
+                dl {
+                    padding-left: 40px;
+                    div + div {
+                        margin-top: 32px;
+                    }
+                }
+                dt, dd {
+                    margin-top: 6px;
+                    line-height: 1.6;
+                }
+                dt {
+                    color: $color-gray-100;
+                    font-weight: 700;
+                }
+                dd {
+                    color: $color-gray-300;
+                }
+            }
+        }
+        @include desktop2 {
+            .history-list {
+                margin: 58px auto 0;
+                max-width: 1168px;
+                padding-bottom: 330px;
+                .one {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    & + .one {
+                        margin-top: 100px;
+                    }
+                }
+            }
+            dl, figure {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+            dl {
+                padding-left: 80px;
+                font-size: 14px;
+                text-align: left;
+                div {
+                    & + div {
+                        margin-top: 60px;
+                    }
+                }
+            }
+            dt, dd {
+                margin-top: 6px;
+                line-height: 1.6;
+            }
+            dt {
+                color: $color-wh;
+                font-weight: 700;
+            }
+            dd {
+                color: $color-gray-500;
+            }
+        }
+        @include desktop {
+            .history-list {
+                // 좌우 여백이 부족해서 추가함  (좌: 60, 우:60)
+                max-width: calc(100vw - 120px - 120px);
+            }
+            figure, dl {
+                width: calc((100vw - 8px - 120px - 120px) / 2);
+                height: calc((100vw - 8px - 120px - 120px) / 2);
+            }
+        }
+    }
+
+    &-membership {
+        .benefit-list {
+            .one {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                font-size: 14px;
+            }
+        }
+        @include t-mobile {
+            padding-bottom: 60px;
+            .description {
+                .head-desc {
+                    & + .head-desc {
+                        margin-top: 0;
+                    }
+                }
+            }
+            .benefit-list {
+                margin: 46px auto 0;
+                ul {
+                    margin-top: 48px;
+                }
+                .one {
+                    & + .one {
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+        @include desktop2 {
+            .description {
+                p {
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+                    &:nth-of-type(2) {
+                        margin-bottom: 24px;
+                        font-size: 24px;
+                        color: $color-wh;
+                    }
+                    &:last-of-type {
+                        color: $color-gray-600;
+                    }
+                }
+            }
+            .benefit-list {
+                margin: 58px auto 0;
+                padding: {
+                    left: 120px;
+                    bottom: 262px;
+                }
+                max-width: 500px;
+                text-align: left;
+                .title {
+                    font-size: 20px;
+                    color: $color-wh;
+                    font-weight: 500;
+                }
+                .one {
+                    margin-top: 32px;
+                    color: $color-gray-600;
+                }
+            }
+        }
+    }
+
+
+    &-book {
+        @include t-mobile {
+            .content {
+                padding-bottom: 60px;
+            }
+            .btn-normal {
+                margin-top: 16px;
+                padding: 0 16px;
+                height: 48px;
+                font-size: 16px;
+                color: $color-gray-100;
+                line-height: 46px;
+            }
+            .btn-area {
+                margin-top: 105px;
+            }
+        }
+        @include tablet {
+        }
+        @include desktop2 {
+            .content {
+                padding-bottom: 350px;
+            }
+            .btn-area {
+                margin: 32px auto 0;
+                width: 315px;
+                .btn {
+                    display: block;
+                    width: 315px;
+                    & + .btn {
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+        @include desktop {
+        }
+    }
+    &-cs {
+        @include t-mobile {
+        }
+        @include tablet {
+        }
+        @include desktop2 {
+        }
+        @include desktop {
+        }
+    }
+}
+
+.p-sub {
+    padding-top: 130px;
+}
+
+.p-membership,
+.p-book {
+    display: flex;
+    flex-direction: column;
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .contents {
+        flex: 1;
+    }
+}
