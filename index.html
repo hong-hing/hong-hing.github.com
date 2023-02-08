@@ -68,7 +68,7 @@
         <div class="container" id="container">
             <section class="section-visual">
                 <div class="video-wrapper">
-                    <video id="video" src="" autoplay muted playsinline controls>
+                    <video id="video" src="" muted playsinline>
                         <source src="" type="video/mp4">
                     </video>
                     <!-- <video id="video" src="./_resources/video/video_pc_01.mp4" autoplay muted playsinline controls>
@@ -357,9 +357,9 @@
                     currentLocale: localStorage.getItem("locale") || 'ko',
                     VIDEO: videoList,
                     pickedVideos: [],
-                    copiedVideos: [],
                     shuffleVideos: [],
                     videoCount: 1,
+                    currentViewType:'mo'
                 }},
                 methods: {
                     changeLocale() {
@@ -374,33 +374,37 @@
                         _html.setAttribute('lang', this.currentLocale);
                     },
                     setLocale(locale) {
-                        localStorage.setItem("locale", locale);
+                        localStorage.setItem('locale', locale);
                         this.$i18n.locale = locale;
                     },
                     checkWidth() {
                         let winWidth = window.innerWidth;
 
                         if(winWidth < 1280) {
+                            this.currentViewType = 'mo';
                             this.pickedVideos = this.VIDEO.mo;
-                            console.error(this.pickedVideos);
+                            // console.error(this.pickedVideos);
                         } else {
+                            this.currentViewType = 'pc';
                             this.pickedVideos = this.VIDEO.pc;
                         }
                         this.createPlayList();
                         this.playVideo(0);
                     },
                     shuffle(arr) {
-                        this.copiedVideos = arr.sort(() => Math.floor( Math.random() - 0.5) );
+                        // this.copiedVideos = arr.sort(() => Math.floor( Math.random() - 0.5) );
+                        return arr.sort(() => Math.floor( Math.random() - 0.5) );
                     },
                     createPlayList() {
                         this.shuffleVideos = [];
                         
-                        this.copiedVideos = this.pickedVideos.concat();
-                        this.copiedVideos?.splice(0, 1);
+                         let copiedVideos = this.pickedVideos.concat();
+
+                        copiedVideos?.splice(0, 1);
 
                         this.shuffleVideos[this.shuffleVideos.length] = this.pickedVideos[0];
-                        this.shuffle(this.copiedVideos);
-                        Array.prototype.push.apply(this.shuffleVideos, this.copiedVideos);
+                        copiedVideos = this.shuffle(copiedVideos);
+                        Array.prototype.push.apply(this.shuffleVideos, copiedVideos);
 
 // console.log('createPlayList - this.shuffleVideos', this.shuffleVideos);
                     },
@@ -414,17 +418,18 @@
                         // _video.play();
 
                         // TO-DO : https://developer.chrome.com/blog/play-request-was-interrupted/
-                        let playPromise = _video.play();
+                        this.playPromise = _video.play();
 
-                        if (playPromise !== undefined) {
-                            playPromise.then(_ => {
-                            // Automatic playback started!
-                            // Show playing UI.
+                        if (this.playPromise !== undefined) {
+                            this.playPromise.then(_ => {
+                                // Automatic playback started!
+                                // Show playing UI.
                             })
                             .catch(error => {
-                                console.log("play error", error);
-                            // Auto-play was prevented
-                            // Show paused UI.
+                                console.log('play error', error);
+                                // Auto-play was prevented
+                                // Show paused UI.
+                                // this.checkWidth();
                             });
                         }
 
@@ -435,7 +440,6 @@
 
 // console.log('checkVideoPlayEnded', this.videoCount);
                         _video.addEventListener('ended', () => {
-                            console.log('ffffffffff');
                             if(this.videoCount < leng) {
                                 this.playVideo(this.videoCount);
                                 this.videoCount++;
@@ -455,11 +459,16 @@
                     _html.setAttribute('lang', this.currentLocale);
                 },
                 mounted() {
-                    // this.createPlayList();
                     this.checkWidth();
                     this.checkVideoPlayEnded();
                     window.addEventListener('resize', () => {
-                        this.checkWidth();
+                        let winWidth = window.innerWidth;
+
+                        if ( (winWidth < 1280 && this.currentViewType == 'pc') || (winWidth >= 1280 && this.currentViewType == 'mo') ) {
+                            let _video = document.getElementById('video');
+                            _video.pause();
+                            this.checkWidth();
+                        }
                     });
                 }
             });
