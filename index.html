@@ -7,7 +7,7 @@
     <meta name="robots" content="index,nofollow"> 
     <meta name="description" content="OPNNG"> 
     <meta property="og:title" content="OPNNG"> 
-    <meta property="og:url" content=""> 
+    <meta property="og:url" content="http://www.baropnng.com/"> 
     <meta property="og:image" content="./_resources/">
     <meta property="og:description" content="OPNNG, 오프닝">
     <meta property="og:keyword" content="OPNNG"> 
@@ -68,23 +68,11 @@
         <div class="container" id="container">
             <section class="section-visual">
                 <div class="video-wrapper">
-                    <video id="video" src="./_resources/video/video_pc_01.mp4" autoplay muted playsinline>
+                    <video id="video" src="" autoplay muted playsinline controls>
+                        <source src="" type="video/mp4">
+                    </video>
+                    <!-- <video id="video" src="./_resources/video/video_pc_01.mp4" autoplay muted playsinline controls>
                         <source src="./_resources/video/video_pc_01.mp4" type="video/mp4">
-                    </video>
-                    <!-- <video src="./_resources/video/video_pc_02.mp4" autoplay muted loop playsinline>
-                        <source src="./_resources/video/video_pc_02.mp4" type="video/mp4">
-                    </video>
-                    <video src="./_resources/video/video_pc_03.mp4" autoplay muted loop playsinline>
-                        <source src="./_resources/video/video_pc_03.mp4" type="video/mp4">
-                    </video>
-                    <video src="./_resources/video/video_pc_04.mp4" autoplay muted loop playsinline>
-                        <source src="./_resources/video/video_pc_04.mp4" type="video/mp4">
-                    </video>
-                    <video src="./_resources/video/video_pc_05.mp4" autoplay muted loop playsinline>
-                        <source src="./_resources/video/video_pc_05.mp4" type="video/mp4">
-                    </video>
-                    <video src="./_resources/video/video_pc_06.mp4" autoplay muted loop playsinline>
-                        <source src="./_resources/video/video_pc_06.mp4" type="video/mp4">
                     </video> -->
                 </div>
                 <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">취향을 갖지 마세요</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC2')">출구가 없으니까요.</strong></p>
@@ -368,9 +356,10 @@
                 data: () => { return {
                     currentLocale: localStorage.getItem("locale") || 'ko',
                     VIDEO: videoList,
-                    videos: [],
+                    pickedVideos: [],
+                    copiedVideos: [],
                     shuffleVideos: [],
-                    num: 0,
+                    videoCount: 1,
                 }},
                 methods: {
                     changeLocale() {
@@ -392,44 +381,73 @@
                         let winWidth = window.innerWidth;
 
                         if(winWidth < 1280) {
-                            this.videos = this.VIDEO.mo;
-                            console.error(this.videos);
+                            this.pickedVideos = this.VIDEO.mo;
+                            console.error(this.pickedVideos);
                         } else {
-                            this.videos = this.VIDEO.pc;
+                            this.pickedVideos = this.VIDEO.pc;
                         }
-console.log(this.videos);
-                        this.playVideo();
-                        // return this.videos;
+                        this.createPlayList();
+                        this.playVideo(0);
                     },
-                    playVideo() {
-                        // let videos;
+                    shuffle(arr) {
+                        this.copiedVideos = arr.sort(() => Math.floor( Math.random() - 0.5) );
+                    },
+                    createPlayList() {
+                        this.shuffleVideos = [];
+                        
+                        this.copiedVideos = this.pickedVideos.concat();
+                        this.copiedVideos?.splice(0, 1);
+
+                        this.shuffleVideos[this.shuffleVideos.length] = this.pickedVideos[0];
+                        this.shuffle(this.copiedVideos);
+                        Array.prototype.push.apply(this.shuffleVideos, this.copiedVideos);
+
+// console.log('createPlayList - this.shuffleVideos', this.shuffleVideos);
+                    },
+                    playVideo(num) {
                         let _video = document.getElementById('video');
-                        // let i = this.num;
 
-                        console.log('videos', this.num);
+// console.log('play!!!!!!!!!!!!!!!!!!!!',  this.shuffleVideos[num].src);
+                        _video.setAttribute('src', this.shuffleVideos[num].src);
+                        _video.children[0].setAttribute('src', this.shuffleVideos[num].src);
+                        _video.load();
+                        // _video.play();
 
-                        _video.setAttribute('src', this.videos[this.num].src);
-                        _video.children[0].setAttribute('src', this.videos[this.num].src);
-                        _video.muted = true;
-                        _video.play();
+                        // TO-DO : https://developer.chrome.com/blog/play-request-was-interrupted/
+                        let playPromise = _video.play();
+
+                        if (playPromise !== undefined) {
+                            playPromise.then(_ => {
+                            // Automatic playback started!
+                            // Show playing UI.
+                            })
+                            .catch(error => {
+                                console.log("play error", error);
+                            // Auto-play was prevented
+                            // Show paused UI.
+                            });
+                        }
 
                     },
                     checkVideoPlayEnded() {
                         let _video = document.getElementById('video');
+                        let leng = this.shuffleVideos.length - 1;
 
+// console.log('checkVideoPlayEnded', this.videoCount);
                         _video.addEventListener('ended', () => {
-                            console.log('끝!', this.videos);
-
-
-                            this.num = Math.floor(Math.random() * 6);
-                            console.log(this.num);
-
-                            this.playVideo();
+                            console.log('ffffffffff');
+                            if(this.videoCount < leng) {
+                                this.playVideo(this.videoCount);
+                                this.videoCount++;
+                            } else if(this.videoCount == leng) {
+// console.log('마지막!', this.videoCount);
+                                this.playVideo(this.videoCount);
+                                this.createPlayList();
+                                this.videoCount = 0;
+                            }
+// console.log('끝!', this.videoCount, leng);
                         });
 
-                    },
-                    shuffle(array) {
-                        this.shuffleVideos = [...array].sort(() => Math.floor( Math.random() - 0.5) ) * 6;
                     }
                 },
                 created() {
@@ -437,6 +455,7 @@ console.log(this.videos);
                     _html.setAttribute('lang', this.currentLocale);
                 },
                 mounted() {
+                    // this.createPlayList();
                     this.checkWidth();
                     this.checkVideoPlayEnded();
                     window.addEventListener('resize', () => {
