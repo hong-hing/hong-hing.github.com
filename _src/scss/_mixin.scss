@@ -20,17 +20,6 @@ $color-wh: #fff;
 $color-purple-100: #c50bc9;
 $color-red-100: #ff3d00;
 
-
-$color-gray-700: #f9f9f9;
-$color-error: #e85257;
-$color-green-100: #12bd7e;      // primary
-$color-yellow-100: #ffe017;     // secondary
-$color-blue-100: #3881f3;
-
-@mixin color-green_gr {
-    background-image: linear-gradient(223deg, #12bd7e 14%, #4fc1a8 85%);
-}
-
 // 640, 960 x 540, 1024 x 640, 1366 x 768, 1920
 $breakpoint-small: 360px;
 $breakpoint-mobile: 640px;
@@ -38,44 +27,40 @@ $breakpoint-tablet: 1280px;
 $breakpoint-desktop: 1366px;    // ipad pro 12.9inch
 
 @mixin mobile-small {
-    @media (max-width: #{$breakpoint-small - 1px}) {
+    @media screen and (max-width: #{$breakpoint-small - 1px}) {
         @content;
     }
 }
 
 @mixin mobile {
-    @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @media screen and (max-width: #{$breakpoint-mobile - 1px}) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @media screen and (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
         @content;
     }
 }
 
 @mixin t-mobile {
-    @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @media screen and (max-width: #{$breakpoint-tablet - 1px}) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @media screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
         @content;
     }
 }
 
 @mixin desktop2 {
-    @media (min-width: #{$breakpoint-tablet}) {
+    @media screen and (min-width: #{$breakpoint-tablet}) {
         @content;
     }
 }
-
-// @function px2rem($font_size, $base_font_size: 20) {
-//     @return $font_size / $base_font_size + rem;
-// }
 
 @mixin font-size($sizeValue: 20) {
     font-size: $sizeValue + px;
@@ -87,8 +72,6 @@ $breakpoint-desktop: 1366px;    // ipad pro 12.9inch
     font-size: $sizeValue + px;
     font-size: $sizeValue / 15 + rem;
 }
-
-
 
 // font-size
 $base_font_size: 15px;
