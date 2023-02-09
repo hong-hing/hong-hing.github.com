@@ -491,7 +491,7 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             // });
 
                             [].map.call( _videos, (item, i) => item.addEventListener('timeupdate', () => {
-                                if (this.videoCount == -1 && i == 0) {
+                                if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
                                     this.videoCount = 0;
                                     item.classList.add('play');
                                 }

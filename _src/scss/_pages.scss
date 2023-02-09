@@ -156,7 +156,7 @@
         }
         @include t-mobile {
             position: relative;
-            .video-wrapper {
+            .video-wrapper, .video-wrapper video {
                 background: url($bg_url + "img_poster_mo_01.jpg") no-repeat center;
             }
             .copy {
@@ -243,7 +243,7 @@
             }
         }
         @include desktop2 {
-            .video-wrapper {
+            .video-wrapper, .video-wrapper video {
                 background: url($bg_url + "bg_visual_pc.jpg") no-repeat center;
             }
             .copy {
