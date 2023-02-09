@@ -83,13 +83,13 @@
                         <source :src="this.videoSrc" type="video/mp4">
                     </video> -->
 
-                    <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: blue;">
+                    <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: green;">
                         <source :src="item.src" type="video/mp4">
                     </video>
                     
 
-                    <!-- <video id="video" src="./_resources/video/video_mo_01.mp4" preload="auto" autoplay muted playsinline poster="./_resources/images/img_poster_mo_01.jpg">
-                        <source src="./_resources/video/video_mo_01.mp4" type="video/mp4">
+                    <!-- <video style="display: none;" src="./_resources/video/video_pc_01.mp4" preload="none" autoplay muted playsinline poster="./_resources/images/img_poster_mo_01.jpg">
+                        <source src="./_resources/video/video_pc_01.mp4" type="video/mp4">
                     </video> -->
                 </div>
                 <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">취향을 갖지 마세요</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC2')">출구가 없으니까요.</strong></p>
