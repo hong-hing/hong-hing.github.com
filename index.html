@@ -490,9 +490,10 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             }));
                             // });
 
+                            let isFirst = true;
                             [].map.call( _videos, (item, i) => item.addEventListener('timeupdate', () => {
-                                if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
-                                    this.videoCount = 0;
+                                if (isFirst && this.videoCount == -1 && i == 0 && item.readyState > 3) {
+                                    isFirst = false;
                                     item.classList.add('play');
                                 }
                                 if(item.duration - item.currentTime <= 1 && this.isEndedBefore[i] == false) {
