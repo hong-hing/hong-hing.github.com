@@ -227,42 +227,6 @@ img {
   font-family: "Noto Serif KR", "NotoSerifKR", Times, "Times New Roman", Georgia, serif;
 }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-}
-.row.justify-between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.info-box {
-  color: #89999b;
-  line-height: 1.29;
-  text-align: center;
-  background: #e9eff0;
-}
-@media (max-width: 1279px) {
-  .info-box {
-    margin: 75px auto 0;
-    padding: 10px 0;
-    font-size: 14px;
-    font-size: 0.9333333333rem;
-  }
-}
-@media (min-width: 1280px) {
-  .info-box {
-    margin: 78px auto 0;
-    padding: 10px 0;
-    max-width: 1120px;
-    font-size: 16px;
-    font-size: 0.8rem;
-  }
-}
-
 .btn {
   display: inline-block;
   font-weight: 500;
