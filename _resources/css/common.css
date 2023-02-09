@@ -1316,14 +1316,17 @@ img {
     width: 100%;
   }
 }
+.section-visual .video-wrapper, .section-visual .video-wrapper video {
+  background-size: cover;
+}
 .section-visual .video-wrapper {
   overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-size: cover;
 }
 .section-visual .video-wrapper video {
+  display: none;
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -1339,6 +1342,7 @@ img {
           backface-visibility: hidden;
 }
 .section-visual .video-wrapper video.loaded, .section-visual .video-wrapper video.play {
+  display: block;
   opacity: 1;
   visibility: visible;
 }

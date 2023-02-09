@@ -128,13 +128,16 @@
     }
 
     &-visual {
+        .video-wrapper, .video-wrapper video {
+            background-size: cover;
+        }
         .video-wrapper {
             overflow: hidden;
             position: relative;
             width: 100vw;
             height: 100vh;
-            background-size: cover;
             video {
+                display:none;
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -149,6 +152,7 @@
                 // object-fit: scale-down;
                 // object-position: 50% 50%;
                 &.loaded, &.play {
+                    display: block;
                     opacity: 1;
                     visibility: visible;
                 }
