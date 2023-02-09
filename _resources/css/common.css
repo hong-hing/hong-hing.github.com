@@ -1346,7 +1346,7 @@ img {
   .section-visual {
     position: relative;
   }
-  .section-visual .video-wrapper {
+  .section-visual .video-wrapper, .section-visual .video-wrapper video {
     background: url("../images/img_poster_mo_01.jpg") no-repeat center;
   }
   .section-visual .copy {
@@ -1418,7 +1418,7 @@ img {
   }
 }
 @media screen and (min-width: 1280px) {
-  .section-visual .video-wrapper {
+  .section-visual .video-wrapper, .section-visual .video-wrapper video {
     background: url("../images/bg_visual_pc.jpg") no-repeat center;
   }
   .section-visual .copy {

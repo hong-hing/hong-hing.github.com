@@ -83,7 +83,7 @@
                         <source :src="this.videoSrc" type="video/mp4">
                     </video> -->
 
-                    <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: red;">
+                    <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: blue;">
                         <source :src="item.src" type="video/mp4">
                     </video>
                     
@@ -491,7 +491,7 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             // });
 
                             [].map.call( _videos, (item, i) => item.addEventListener('timeupdate', () => {
-                                if (this.videoCount == -1 && i == 0) {
+                                if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
                                     this.videoCount = 0;
                                     item.classList.add('play');
                                 }
