@@ -3,10 +3,10 @@
     font-weight: 500;
     line-height: 1.52;
     @include t-mobile {
-        @include font-size-mo(48);
+        font-size: 48px;
     }
     @include desktop2 {
-        @include font-size(64);
+        font-size: 64px;
         color: $color-wh;
     }
     strong {
@@ -19,15 +19,6 @@
     }
     &-info {
         color: $color-gray-300;
-    }
-    &-desc {
-        @include font-size-mo(16);
-    }
-    &-primary {
-        color: $color-green-100;
-    }
-    &-secondary {
-        color: $color-yellow-100;
     }
 }
 

@@ -174,10 +174,9 @@
                 },
                 created() {
                     this.$i18n.locale = this.currentLocale;
-                    _html.setAttribute('lang', this.currentLocale);
                 },
                 mounted() {
-                    
+                    _html.setAttribute('lang', this.currentLocale);
                 }
             });
         });

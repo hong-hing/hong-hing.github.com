@@ -138,6 +138,8 @@
     <script src="../_resources/js/ui.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            let _html = document.querySelector('html');
+            let lang = _html.getAttribute('lang');
             
             const i18n = new VueI18n({ 
                 fallbackLng: 'ko',
@@ -153,15 +155,15 @@
                 }},
                 methods: {
                     changeLocale() {
-                        let _html = document.querySelector('html');
-                        let lang = _html.getAttribute('lang');
+                        _html = document.querySelector('html');
+                        lang = _html.getAttribute('lang');
 
                         this.$i18n.locale = this.currentLocale;
                         this.currentLocale === 'ko' ? this.currentLocale = 'en' : this.currentLocale = 'ko';
 
                         this.setLocale(this.currentLocale);
 
-                        _html.setAttribute('lang', 'en');
+                        _html.setAttribute('lang', this.currentLocale);
                     },
                     setLocale(locale) {
                         localStorage.setItem("locale", locale);
@@ -172,7 +174,7 @@
                     this.$i18n.locale = this.currentLocale;
                 },
                 mounted() {
-                    
+                    _html.setAttribute('lang', this.currentLocale);
                 }
             });
         });

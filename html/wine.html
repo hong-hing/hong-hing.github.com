@@ -67,7 +67,7 @@
                     </div>
                 </nav>
                 <h1 class="logo"><a href="/"><img src="../_resources/images/logo.svg" alt="OPNNG"></a></h1>
-                <button class="btn btn-normal b-200 font-serif active-kr" type="button"><span class="kr">Kr</span>/<span class="en">En</span></button>
+                <button class="btn btn-normal b-200 font-serif" :class="{ 'active-kr': $i18n.locale === 'ko', 'active-en': $i18n.locale === 'en'}" type="button" @click="changeLocale()"><span class="kr">Kr</span>/<span class="en">En</span></button>
             </div>
         </header>
 
@@ -174,10 +174,9 @@
                 },
                 created() {
                     this.$i18n.locale = this.currentLocale;
-                    _html.setAttribute('lang', this.currentLocale);
                 },
                 mounted() {
-                    
+                    _html.setAttribute('lang', this.currentLocale);
                 }
             });
         });
