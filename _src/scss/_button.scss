@@ -173,9 +173,6 @@
 .btn-area {
     margin-top: 32px;
     text-align: center;
-    // padding: 20px 20px 20px;
-    // padding-bottom: safe(bottom, 20px);
-    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $color-wh 21.74%);
     @include t-mobile {
         .btn {
             padding: 0;
