@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if(scrollTop <= 52) {
                 removeActiveClassevent(menuLI[index]);
                 menuLI[0].classList.add('active');
-            } else if(bodyScrollBottom == 0) {
+            } else if(bodyScrollBottom <= 0) {
                 removeActiveClassevent(menuLI[index]);
-                menuLI[menuLI.length - 1].classList.add('active');
+                menuLI[menuLI.length - 2].classList.add('active');
             }
         });
     };

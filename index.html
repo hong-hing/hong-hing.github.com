@@ -413,6 +413,7 @@
                         [].map.call( this.videoListEl, (item, i) => {
                             item.querySelector('source').src = this.pickedVideos[i].src;
                         });
+                        this.videoListEl[0].querySelector('img').src = 'https://www.baropnng.com/_resources/images/img_poster_' + this.currentViewType + '_01.jpg';
                     },
                     shuffle(arr) {
                         return arr.sort(() => Math.floor( Math.random() - 0.5) );
@@ -426,7 +427,7 @@
                         copiedVideos = this.shuffle(copiedVideos);
                         Array.prototype.push.apply(this.shuffleIndex, copiedVideos);
 
-                        console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
+                        // console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     },
                     playVideo(currentIndex) {
                         this.$nextTick(() => {
@@ -445,13 +446,13 @@
                     detectVideoStatus() {
                         let leng = this.shuffleIndex.length - 1;
 
-                        console.log('checkVideoPlayEnded', this.videoCount);
+                        // console.log('checkVideoPlayEnded', this.videoCount);
                         [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
                             if(this.videoCount < leng) {
-                                console.log('연속재생 진행중. 현재index: ', this.videoCount, leng);
+                                // console.log('연속재생 진행중. 현재index: ', this.videoCount, leng);
                                 this.videoCount++;
                             } else if(this.videoCount == leng) {
-                                console.log('연속재생 마지막. 현재index: ', this.videoCount, leng);
+                                // console.log('연속재생 마지막. 현재index: ', this.videoCount, leng);
                                 this.createPlayList();
                                 this.videoCount = 0;
                             }
