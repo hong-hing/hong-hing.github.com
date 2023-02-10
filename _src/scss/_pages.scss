@@ -128,9 +128,6 @@
     }
 
     &-visual {
-        .video-wrapper, .video-wrapper video {
-            background-size: cover;
-        }
         .video-wrapper {
             overflow: hidden;
             position: relative;
@@ -160,7 +157,7 @@
         }
         @include t-mobile {
             position: relative;
-            .video-wrapper, .video-wrapper video {
+            .video-wrapper {
                 background: url($bg_url + "img_poster_mo_01.jpg") no-repeat center;
                 background-size: cover;
             }
@@ -248,7 +245,7 @@
             }
         }
         @include desktop2 {
-            .video-wrapper, .video-wrapper video {
+            .video-wrapper {
                 background: url($bg_url + "img_poster_pc_01.jpg") no-repeat center;
                 background-size: cover;
             }

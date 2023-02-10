@@ -42,7 +42,7 @@
     }
     &-tertiary {
         margin: 0 auto;
-        padding: 0 84px;
+        padding: 0 76px;
         max-width: 420px;
         height: 56px;
         color: $color-wh;
@@ -185,7 +185,7 @@
     @include desktop2 {
         .btn {
             & + .btn {
-                margin-left: 10px;
+                // margin-left: 10px;
             }
         }
     }

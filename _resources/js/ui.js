@@ -136,13 +136,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if(_menus !== null) {
             [].map.call( _menus, item => {
                 item.addEventListener('click', (event) => {
-                    event.preventDefault();
-
                     _target = event.currentTarget;
-                    _targetMenu = document.querySelector(_target.getAttribute('href'));
-                    offsetY = _targetMenu.offsetTop;
 
-                    window.scrollTo(0, offsetY);
+                    const chars = _target.getAttribute('href').split('');
+
+                    if( chars[0] == '#' ) {
+                        event.preventDefault();
+                        _targetMenu = document.querySelector(_target.getAttribute('href'));
+                        offsetY = _targetMenu.offsetTop;    
+                        window.scrollTo(0, offsetY);
+                    }
                 });
             } );
         }

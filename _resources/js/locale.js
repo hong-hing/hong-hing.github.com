@@ -1,7 +1,7 @@
 const messages = {
     ko: {
         VISUAL: {
-            DESC1: `취향을 갖지마세요.`, 
+            DESC1: `취향을 갖지 마세요.`, 
             DESC2: `출구가 없으니까요.`, 
         },
         OPNNG: {
