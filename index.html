@@ -73,23 +73,23 @@
             <section class="section-visual">
                 <div class="video-wrapper" id="videoWrap">
                     <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
-                    <video src="./_resources/video/video_mo_01.mp4" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
-                        <source src="./_resources/video/video_mo_1.mp4" type="video/mp4">
+                    <video preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == 0}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_01.mp4" type="video/mp4">
                     </video>
-                    <video src="./_resources/video/video_mo_02.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 1}">
-                        <source src="./_resources/video/video_mo_02.mp4" type="video/mp4">
+                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 1}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_02.mp4" type="video/mp4">
                     </video>
-                    <video src="./_resources/video/video_mo_03.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 2}">
-                        <source src="./_resources/video/video_mo_03.mp4" type="video/mp4">
+                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 2}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_03.mp4" type="video/mp4">
                     </video>
-                    <video src="./_resources/video/video_mo_04.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 3}">
-                        <source src="./_resources/video/video_mo_04.mp4" type="video/mp4">
+                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 3}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_04.mp4" type="video/mp4">
                     </video>
-                    <video src="./_resources/video/video_mo_05.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 4}">
-                        <source src="./_resources/video/video_mo_05.mp4" type="video/mp4">
+                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 4}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_05.mp4" type="video/mp4">
                     </video>
-                    <video src="./_resources/video/video_mo_06.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 5}">
-                        <source src="./_resources/video/video_mo_06.mp4" type="video/mp4">
+                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 5}">
+                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_06.mp4" type="video/mp4">
                     </video>
                 </div>
                 <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">취향을 갖지 마세요</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC2')">출구가 없으니까요.</strong></p>
@@ -343,20 +343,20 @@
 
             const videoList = {
                 'mo': [
-                    {src: './_resources/video/video_mo_01.mp4'},
-                    {src: './_resources/video/video_mo_02.mp4'},
-                    {src: './_resources/video/video_mo_03.mp4'},
-                    {src: './_resources/video/video_mo_04.mp4'},
-                    {src: './_resources/video/video_mo_05.mp4'},
-                    {src: './_resources/video/video_mo_06.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_01.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_02.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_03.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_04.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_05.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_06.mp4'},
                 ],
                 'pc': [
-                    {src: './_resources/video/video_pc_01.mp4'},
-                    {src: './_resources/video/video_pc_02.mp4'},
-                    {src: './_resources/video/video_pc_03.mp4'},
-                    {src: './_resources/video/video_pc_04.mp4'},
-                    {src: './_resources/video/video_pc_05.mp4'},
-                    {src: './_resources/video/video_pc_06.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_01.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_02.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_03.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_04.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_05.mp4'},
+                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_06.mp4'},
                 ]
             };
 
@@ -410,9 +410,7 @@
                         }
 
                         [].map.call( this.videoListEl, (item, i) => {
-                            item.src = './_resources/video/video_' + this.currentViewType + '_0' + (i+1) + '.mp4';
-                            // item.poster = './_resources/images/img_poster_' + this.currentViewType + '_01.jpg';
-                            item.querySelector('source').src = item.src;
+                            item.querySelector('source').src = this.pickedVideos[i].src;
                         });
                     },
                     shuffle(arr) {
@@ -427,7 +425,7 @@
                         copiedVideos = this.shuffle(copiedVideos);
                         Array.prototype.push.apply(this.shuffleIndex, copiedVideos);
 
-console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
+                        console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     },
                     playVideo(currentIndex) {
                         this.$nextTick(() => {
@@ -443,41 +441,37 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             }
                         });
                     },
-                    checkVideoPlayEnded() {
-                        // this.$nextTick(() => {
-                            let leng = this.shuffleIndex.length - 1;
-// console.log('_videos', _videos);
-    console.log('checkVideoPlayEnded', this.videoCount);
-                            [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
-                                console.log('video end');
-                                if(this.videoCount < leng) {
-    console.log('연속재생 진행중. 현재index: ', this.videoCount, leng);
-                                    this.videoCount++;
-                                } else if(this.videoCount == leng) {
-    console.log('연속재생 마지막. 현재index: ', this.videoCount, leng);
-                                    this.createPlayList();
-                                    this.videoCount = 0;
-                                }
-                            }));
+                    detectVideoStatus() {
+                        let leng = this.shuffleIndex.length - 1;
 
-                            [].map.call( this.videoListEl, (item, i) => item.addEventListener('timeupdate', () => {
-                                if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
-                                    this.videoCount = 0;
-                                    // item.classList.add('play');
+                        console.log('checkVideoPlayEnded', this.videoCount);
+                        [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
+                            if(this.videoCount < leng) {
+                                console.log('연속재생 진행중. 현재index: ', this.videoCount, leng);
+                                this.videoCount++;
+                            } else if(this.videoCount == leng) {
+                                console.log('연속재생 마지막. 현재index: ', this.videoCount, leng);
+                                this.createPlayList();
+                                this.videoCount = 0;
+                            }
+                        }));
+
+                        [].map.call( this.videoListEl, (item, i) => item.addEventListener('timeupdate', () => {
+                            if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
+                                this.videoCount = 0;
+                            }
+                            if(item.duration - item.currentTime <= 1 && this.isEndedBefore[i] == false) {
+                                // console.log('video change');
+                                this.isEndedBefore[i] = true;
+                                if (this.videoCount == this.videoListEl.length - 1) {
+                                    this.playVideo(0);
+                                } else {
+                                    this.playVideo(this.videoCount+1);
                                 }
-                                if(item.duration - item.currentTime <= 1 && this.isEndedBefore[i] == false) {
-                                    console.log('video change');
-                                    this.isEndedBefore[i] = true;
-                                    if (this.videoCount == this.videoListEl.length - 1) {
-                                        this.playVideo(0);
-                                    } else {
-                                        this.playVideo(this.videoCount+1);
-                                    }
-                                } else if (item.duration - item.currentTime > 1) {
-                                    this.isEndedBefore[i] = false;
-                                }
-                            }));
-                        // });
+                            } else if (item.duration - item.currentTime > 1) {
+                                this.isEndedBefore[i] = false;
+                            }
+                        }));
                     },
                     createInit() {
                         let winWidth = window.innerWidth;
@@ -503,15 +497,12 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     this.videoListEl = document.querySelectorAll('#videoWrap video');
                     
                     this.createInit();
-                    this.checkVideoPlayEnded();
+                    this.detectVideoStatus();
 
                     window.addEventListener('resize', () => {
                         let winWidth = window.innerWidth;
 
                         if ( (winWidth < 1280 && this.currentViewType == 'pc') || (winWidth >= 1280 && this.currentViewType == 'mo') ) {
-                            // TO-DO 현재 재생중인 객체 퍼즈 필요
-                            // let _video = document.getElementById('video');
-                            // _video.pause();
                             this.resizeInit();
                         }
                     });
