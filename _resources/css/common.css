@@ -1326,7 +1326,6 @@ img {
   height: 100vh;
 }
 .section-visual .video-wrapper video {
-  display: none;
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -1342,7 +1341,6 @@ img {
           backface-visibility: hidden;
 }
 .section-visual .video-wrapper video.loaded, .section-visual .video-wrapper video.play {
-  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -1352,6 +1350,7 @@ img {
   }
   .section-visual .video-wrapper, .section-visual .video-wrapper video {
     background: url("../images/img_poster_mo_01.jpg") no-repeat center;
+    background-size: cover;
   }
   .section-visual .copy {
     position: absolute;
@@ -1379,12 +1378,12 @@ img {
     text-align: right;
   }
 }
-@media screen and (max-width: 1279px) and (min-aspect-ratio: 46/100) {
+@media screen and (max-width: 1279px) and (min-aspect-ratio: 48/100) {
   .section-visual .video-wrapper video {
     max-width: 100%;
   }
 }
-@media screen and (max-width: 1279px) and (max-aspect-ratio: 54/100) {
+@media screen and (max-width: 1279px) and (max-aspect-ratio: 48/100) {
   .section-visual .video-wrapper video {
     max-height: 100%;
   }
@@ -1423,7 +1422,8 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .section-visual .video-wrapper, .section-visual .video-wrapper video {
-    background: url("../images/bg_visual_pc.jpg") no-repeat center;
+    background: url("../images/img_poster_pc_01.jpg") no-repeat center;
+    background-size: cover;
   }
   .section-visual .copy {
     position: absolute;

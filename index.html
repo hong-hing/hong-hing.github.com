@@ -83,8 +83,27 @@
                         <source :src="this.videoSrc" type="video/mp4">
                     </video> -->
 
-                    <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: green;">
+                    <!-- <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: green;">
                         <source :src="item.src" type="video/mp4">
+                    </video> -->
+
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 1}">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 2}">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 3}">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 4}">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 5}">
+                        <source src="" type="video/mp4">
                     </video>
                     
 
@@ -109,8 +128,8 @@
                                 <p class="head-desc" v-html="$t('OPNNG.DESC5')">오랫동안 존재하겠습니다.</p>
                             </div>
                             <div class="btn-area MO-B">
-                                <a href="javascript:;" class="btn btn-primary" v-html="$t('OPNNG.BUTTON')">예약하기</a>
-                                <a href="javascript:;" class="btn btn-secondary">INSTAGRAM</a>
+                                <a href="https://app.catchtable.co.kr/ct/shop/bar_opnng" target="_blank" class="btn btn-primary" v-html="$t('OPNNG.BUTTON')">예약하기</a>
+                                <a href="https://www.instagram.com/bar_opnng/" target="_blank" class="btn btn-secondary">INSTAGRAM</a>
                             </div>
                         </div>
                     </div>
@@ -335,7 +354,6 @@
         </div>
     </div>
 
-    <!-- <script src="./_resources/js/language_setting.js"></script> -->
     <script src="./_resources/js/ui.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -378,6 +396,7 @@
                     videoCount: -1,
                     currentViewType:'mo',
                     isEndedBefore: [false, false, false, false, false, false],
+                    videoListEl: [],
                 }},
                 methods: {
                     changeLocale() {
@@ -406,8 +425,17 @@
                             this.currentViewType = 'pc';
                             this.pickedVideos = this.VIDEO.pc;
                         }
-                        this.createPlayList();
-                        this.playVideo(0);
+
+                        [].map.call( this.videoListEl, (item, i) => {
+                            item.src = './_resources/video/video_' + this.currentViewType + '_0' + (i+1) + '.mp4';
+                            // item.poster = './_resources/images/img_poster_' + this.currentViewType + '_01.jpg';
+                            item.querySelector('source').src = item.src;
+                        });
+
+                        // 최초에 Init함수에서 checkwidth, createplaylist, playvideo(0) 수행
+                        // 리사이즈시에는 checkwidth, playvideo(this.videoCount) 가 맞지 않을까?
+                        // this.createPlayList();
+                        // this.playVideo(0);
                     },
                     shuffle(arr) {
                         // this.copiedVideos = arr.sort(() => Math.floor( Math.random() - 0.5) );
@@ -425,9 +453,9 @@
 console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     },
                     playVideo(currentIndex) {
-                        let _videos;
+                        // let _videos;
                         this.$nextTick(() => {
-                            _videos = document.querySelectorAll('#videoWrap video');
+                            // _videos = document.querySelectorAll('#videoWrap video');
 
 // console.log('_videos', _videos, this.videoCount, this.shuffleIndex[currentIndex]);
 
@@ -435,7 +463,7 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             //     item.play();
                             // });
 
-                            this.playPromise = _videos[this.shuffleIndex[currentIndex]].play();
+                            this.playPromise = this.videoListEl[this.shuffleIndex[currentIndex]].play();
 
                             if (this.playPromise !== undefined) {
                                 this.playPromise.then(_ => {
@@ -446,7 +474,7 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                                     console.log('play error', error);
                                     // Auto-play was prevented
                                     // Show paused UI.
-                                    // this.checkWidth();
+                                    this.videoListEl[this.shuffleIndex[currentIndex]].play();
                                 });
                             }
 
@@ -469,12 +497,12 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     },
                     checkVideoPlayEnded() {
                         this.$nextTick(() => {
-                            let  _videos = document.querySelectorAll('#videoWrap video');
+                            // let  _videos = document.querySelectorAll('#videoWrap video');
                             let leng = this.shuffleIndex.length - 1;
                             let idx = this.shuffleIndex[this.videoCount];
 // console.log('_videos', _videos);
     console.log('checkVideoPlayEnded', idx, this.videoCount);
-                            [].map.call( _videos, item => item.addEventListener('ended', () => {
+                            [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
                                 console.log('video end');
                             // _videos[idx].addEventListener('ended', () => {
                                 if(this.videoCount < leng) {
@@ -490,16 +518,15 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             }));
                             // });
 
-                            let isFirst = true;
-                            [].map.call( _videos, (item, i) => item.addEventListener('timeupdate', () => {
-                                if (isFirst && this.videoCount == -1 && i == 0 && item.readyState > 3) {
-                                    isFirst = false;
-                                    item.classList.add('play');
+                            [].map.call( this.videoListEl, (item, i) => item.addEventListener('timeupdate', () => {
+                                if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
+                                    this.videoCount = 0;
+                                    // item.classList.add('play');
                                 }
                                 if(item.duration - item.currentTime <= 1 && this.isEndedBefore[i] == false) {
                                     console.log('video change');
                                     this.isEndedBefore[i] = true;
-                                    if (this.videoCount == _videos.length - 1) {
+                                    if (this.videoCount == this.videoListEl.length - 1) {
                                         this.playVideo(0);
                                     } else {
                                         this.playVideo(this.videoCount+1);
@@ -509,8 +536,15 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                                 }
                             }));
                         });
-
-                    }
+                    },
+                    createInit() {
+                        this.createPlayList();
+                        this.playVideo(0);
+                    },
+                    resizeInit() {
+                        this.createPlayList();
+                        this.playVideo(this.videoCount);
+                    },
                 },
                 created() {
                     this.$i18n.locale = this.currentLocale;
@@ -518,16 +552,20 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                 mounted() {
                     _html.setAttribute('lang', this.currentLocale);
 
+                    this.videoListEl = document.querySelectorAll('#videoWrap video');
                     this.checkWidth();
+                    this.createInit();
                     this.checkVideoPlayEnded();
 
                     window.addEventListener('resize', () => {
                         let winWidth = window.innerWidth;
 
                         if ( (winWidth < 1280 && this.currentViewType == 'pc') || (winWidth >= 1280 && this.currentViewType == 'mo') ) {
-                            let _video = document.getElementById('video');
-                            _video.pause();
+                            // TO-DO 현재 재생중인 객체 퍼즈 필요
+                            // let _video = document.getElementById('video');
+                            // _video.pause();
                             this.checkWidth();
+                            this.resizeInit();
                         }
                     });
                 },

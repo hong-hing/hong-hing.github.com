@@ -137,7 +137,7 @@
             width: 100vw;
             height: 100vh;
             video {
-                display:none;
+                // display:none;
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -152,7 +152,7 @@
                 // object-fit: scale-down;
                 // object-position: 50% 50%;
                 &.loaded, &.play {
-                    display: block;
+                    // display: block;
                     opacity: 1;
                     visibility: visible;
                 }
@@ -162,6 +162,7 @@
             position: relative;
             .video-wrapper, .video-wrapper video {
                 background: url($bg_url + "img_poster_mo_01.jpg") no-repeat center;
+                background-size: cover;
             }
             .copy {
                 position: absolute;
@@ -188,7 +189,7 @@
                     text-align: right;
                 }
             }
-            @media (min-aspect-ratio: 46/100) {
+            @media (min-aspect-ratio: 48/100) {
                 .video-wrapper {
                     video {
                         max-width: 100%;
@@ -196,7 +197,7 @@
                     }
                 }
             }
-            @media (max-aspect-ratio: 54/100) {
+            @media (max-aspect-ratio: 48/100) {
                 .video-wrapper {
                     video {
                         // max-width: 125%;
@@ -248,7 +249,8 @@
         }
         @include desktop2 {
             .video-wrapper, .video-wrapper video {
-                background: url($bg_url + "bg_visual_pc.jpg") no-repeat center;
+                background: url($bg_url + "img_poster_pc_01.jpg") no-repeat center;
+                background-size: cover;
             }
             .copy {
                 position: absolute;
@@ -261,7 +263,7 @@
                 max-width: 1144px;
                 font-size: 32px;
                 color: $color-wh;
-                font-weight: 300;
+                font-weight: 300; 
                 box-sizing: border-box;
                 transform: translate3d(calc(-50% + 90px), -50%, 0);
                 .bar {
