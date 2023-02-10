@@ -19,18 +19,11 @@
     <meta property="og:description" content="오프닝은 ‘취향을 여는 공간'이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 ‘와인과 미술'이라는 취향을 선보이는 공간입니다.">
     <meta property="og:keyword" content="오프닝, OPNNG, 와인, 바, 와인바, 와인바오프닝, 레드와인, 화이트와인, 샴페인, 파인다이닝, 논현, 청담, 압구정"> 
 
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,500&family=Noto+Serif+KR:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,500&family=Noto+Serif+KR:wght@200;300;400;500;700" rel="stylesheet">
     <link rel="stylesheet" href="./_resources/css/common.css">
     <script src="./_resources/js/lib/vue.min.js"></script>
     <script src="./_resources/js/lib/i18next.min.js"></script>
     <script src="./_resources/js/locale.js"></script>
-
-    <!-- <link rel="preload" as="video" href="./_resources/video/video_mo_01.mp4">
-    <link rel="preload" as="video" href="./_resources/video/video_mo_02.mp4">
-    <link rel="preload" as="video" href="./_resources/video/video_mo_03.mp4">
-    <link rel="preload" as="video" href="./_resources/video/video_mo_04.mp4">
-    <link rel="preload" as="video" href="./_resources/video/video_mo_05.mp4">
-    <link rel="preload" as="video" href="./_resources/video/video_mo_06.mp4"> -->
 </head>
 <body>
     <div class="wrap p-main" id="wrap">
@@ -65,7 +58,7 @@
                                 <li><a href="#history">History</a></li>
                                 <li><a href="#membership">Membership</a></li>
                                 <li class="divide"><a href="#book">Book</a></li>
-                                <li><a href="https://www.instagram.com/bar_opnng/">Instagram</a></li>
+                                <li><a href="https://www.instagram.com/bar_opnng/" target="_blank">Instagram</a></li>
                             </ul>
                         </div>
                         <p class="foot MO-B">&copy;copyright all rights reserved OPNNG</p>
@@ -79,37 +72,25 @@
         <div class="container" id="container">
             <section class="section-visual">
                 <div class="video-wrapper" id="videoWrap">
-                    <!-- <video id="video" :src="this.videoSrc" preload="auto" muted playsinline>
-                        <source :src="this.videoSrc" type="video/mp4">
-                    </video> -->
-
-                    <!-- <video v-for="(item, i) in pickedVideos" :src="item.src" preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == i}" poster="./_resources/images/img_poster_mo_01.jpg" style="background: green;">
-                        <source :src="item.src" type="video/mp4">
-                    </video> -->
-
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
-                        <source src="" type="video/mp4">
+                    <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
+                    <video src="./_resources/video/video_mo_01.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
+                        <source src="./_resources/video/video_mo_1.mp4" type="video/mp4">
                     </video>
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 1}">
-                        <source src="" type="video/mp4">
+                    <video src="./_resources/video/video_mo_02.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 1}">
+                        <source src="./_resources/video/video_mo_02.mp4" type="video/mp4">
                     </video>
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 2}">
-                        <source src="" type="video/mp4">
+                    <video src="./_resources/video/video_mo_03.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 2}">
+                        <source src="./_resources/video/video_mo_03.mp4" type="video/mp4">
                     </video>
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 3}">
-                        <source src="" type="video/mp4">
+                    <video src="./_resources/video/video_mo_04.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 3}">
+                        <source src="./_resources/video/video_mo_04.mp4" type="video/mp4">
                     </video>
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 4}">
-                        <source src="" type="video/mp4">
+                    <video src="./_resources/video/video_mo_05.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 4}">
+                        <source src="./_resources/video/video_mo_05.mp4" type="video/mp4">
                     </video>
-                    <video src="" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 5}">
-                        <source src="" type="video/mp4">
+                    <video src="./_resources/video/video_mo_06.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 5}">
+                        <source src="./_resources/video/video_mo_06.mp4" type="video/mp4">
                     </video>
-                    
-
-                    <!-- <video style="display: none;" src="./_resources/video/video_pc_01.mp4" preload="none" autoplay muted playsinline poster="./_resources/images/img_poster_mo_01.jpg">
-                        <source src="./_resources/video/video_pc_01.mp4" type="video/mp4">
-                    </video> -->
                 </div>
                 <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">취향을 갖지 마세요</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC2')">출구가 없으니까요.</strong></p>
             </section>
@@ -318,7 +299,7 @@
                             </div>
                             <div class="btn-area">
                                 <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-underline">Reservation guide for foreigners</a>
-                                <a href="javascript:;" class="btn btn-tertiary" v-html="$t('BOOK.BUTTON')">캐치테이블 예약하기 ></a>
+                                <a href="https://app.catchtable.co.kr/ct/shop/bar_opnng" target="_blank" class="btn btn-tertiary" v-html="$t('BOOK.BUTTON')">캐치테이블 예약하기 ></a>
                             </div>
                         </div>
                     </div>
@@ -420,7 +401,6 @@
                         if(winWidth < 1280) {
                             this.currentViewType = 'mo';
                             this.pickedVideos = this.VIDEO.mo;
-                            // console.error(this.pickedVideos);
                         } else {
                             this.currentViewType = 'pc';
                             this.pickedVideos = this.VIDEO.pc;
@@ -431,14 +411,8 @@
                             // item.poster = './_resources/images/img_poster_' + this.currentViewType + '_01.jpg';
                             item.querySelector('source').src = item.src;
                         });
-
-                        // 최초에 Init함수에서 checkwidth, createplaylist, playvideo(0) 수행
-                        // 리사이즈시에는 checkwidth, playvideo(this.videoCount) 가 맞지 않을까?
-                        // this.createPlayList();
-                        // this.playVideo(0);
                     },
                     shuffle(arr) {
-                        // this.copiedVideos = arr.sort(() => Math.floor( Math.random() - 0.5) );
                         return arr.sort(() => Math.floor( Math.random() - 0.5) );
                     },
                     createPlayList() {
@@ -453,70 +427,35 @@
 console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     },
                     playVideo(currentIndex) {
-                        // let _videos;
                         this.$nextTick(() => {
-                            // _videos = document.querySelectorAll('#videoWrap video');
-
-// console.log('_videos', _videos, this.videoCount, this.shuffleIndex[currentIndex]);
-
-                            // [].map.call(_videos, item => {
-                            //     item.play();
-                            // });
-
                             this.playPromise = this.videoListEl[this.shuffleIndex[currentIndex]].play();
 
                             if (this.playPromise !== undefined) {
                                 this.playPromise.then(_ => {
-                                    // Automatic playback started!
-                                    // Show playing UI.
                                 })
                                 .catch(error => {
                                     console.log('play error', error);
-                                    // Auto-play was prevented
-                                    // Show paused UI.
                                     this.videoListEl[this.shuffleIndex[currentIndex]].play();
                                 });
                             }
-
                         });
-
-// console.log('play!!!!!!!!!!!!!!!!!!!!',  this.shuffleIndex[num].src);
-                        //     _video.classList.remove('videoLoaded');
-                        // this.videoSrc = this.shuffleIndex[num].src;
-                        // console.log(this.videoSrc);
-                        // _video.load();
-                        // _video.addEventListener('loadeddata', () => {
-                        //     _video.classList.add('videoLoaded');
-                        // });
-                        // _video.play();
-
-
-                        // this.playPromise = _video.play();
-
-
                     },
                     checkVideoPlayEnded() {
-                        this.$nextTick(() => {
-                            // let  _videos = document.querySelectorAll('#videoWrap video');
+                        // this.$nextTick(() => {
                             let leng = this.shuffleIndex.length - 1;
-                            let idx = this.shuffleIndex[this.videoCount];
 // console.log('_videos', _videos);
-    console.log('checkVideoPlayEnded', idx, this.videoCount);
+    console.log('checkVideoPlayEnded', this.videoCount);
                             [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
                                 console.log('video end');
-                            // _videos[idx].addEventListener('ended', () => {
                                 if(this.videoCount < leng) {
     console.log('연속재생 진행중. 현재index: ', this.videoCount, leng);
-                                    // this.playVideo();
                                     this.videoCount++;
                                 } else if(this.videoCount == leng) {
     console.log('연속재생 마지막. 현재index: ', this.videoCount, leng);
-                                    // this.playVideo();
                                     this.createPlayList();
                                     this.videoCount = 0;
                                 }
                             }));
-                            // });
 
                             [].map.call( this.videoListEl, (item, i) => item.addEventListener('timeupdate', () => {
                                 if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
@@ -535,13 +474,15 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                                     this.isEndedBefore[i] = false;
                                 }
                             }));
-                        });
+                        // });
                     },
                     createInit() {
+                        this.checkWidth();
                         this.createPlayList();
                         this.playVideo(0);
                     },
                     resizeInit() {
+                        this.checkWidth();
                         this.createPlayList();
                         this.playVideo(this.videoCount);
                     },
@@ -553,7 +494,7 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                     _html.setAttribute('lang', this.currentLocale);
 
                     this.videoListEl = document.querySelectorAll('#videoWrap video');
-                    this.checkWidth();
+                    
                     this.createInit();
                     this.checkVideoPlayEnded();
 
@@ -564,7 +505,6 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                             // TO-DO 현재 재생중인 객체 퍼즈 필요
                             // let _video = document.getElementById('video');
                             // _video.pause();
-                            this.checkWidth();
                             this.resizeInit();
                         }
                     });
