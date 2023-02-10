@@ -73,7 +73,7 @@
             <section class="section-visual">
                 <div class="video-wrapper" id="videoWrap">
                     <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
-                    <video preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == 0}">
+                    <video preload="metadata" muted playsinline :class="{play : (shuffleIndex[videoCount]) == 0}">
                         <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_01.mp4" type="video/mp4">
                     </video>
                     <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 1}">
