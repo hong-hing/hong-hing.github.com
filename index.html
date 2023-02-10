@@ -477,7 +477,11 @@ console.log('createPlayList - this.shuffleIndex', this.shuffleIndex);
                         // });
                     },
                     createInit() {
-                        this.checkWidth();
+                        let winWidth = window.innerWidth;
+
+                        if ( (winWidth >= 1280 && this.currentViewType == 'mo') ) {
+                            this.checkWidth();
+                        }
                         this.createPlayList();
                         this.playVideo(0);
                     },
