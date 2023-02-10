@@ -145,6 +145,7 @@
                 min-width: 100%;
                 min-height: 100%;
                 transform: translate3d(-50%, -50%, 0);
+                mask-image: -webkit-radial-gradient(white, black);
                 backface-visibility: hidden;
                 // object-fit: scale-down;
                 // object-position: 50% 50%;

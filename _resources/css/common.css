@@ -102,48 +102,6 @@ pre {
   white-space: pre-wrap;
 }
 
-@font-face {
-  font-family: "NotoSerifKR";
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: local("Noto Serif KR"), local("NotoSerifKR-ExtraLight"), url("../fonts/NotoSerifKR-ExtraLight.woff2") format("woff2"), url("../fonts/NotoSerifKR-ExtraLight.woff") format("woff");
-}
-@font-face {
-  font-family: "NotoSerifKR";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local("Noto Serif KR"), local("NotoSerifKR-Light"), url("../fonts/NotoSerifKR-Light.woff2") format("woff2"), url("../fonts/NotoSerifKR-Light.woff") format("woff");
-}
-@font-face {
-  font-family: "NotoSerifKR";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Noto Serif KR"), local("NotoSerifKR-Regular"), url("../fonts/NotoSerifKR-Regular.woff2") format("woff2"), url("../fonts/NotoSerifKR-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: "NotoSerifKR";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local("Noto Serif KR"), local("NotoSerifKR-Medium"), url("../fonts/NotoSerifKR-Medium.woff2") format("woff2"), url("../fonts/NotoSerifKR-Medium.woff") format("woff");
-}
-@font-face {
-  font-family: "NotoSerifKR";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Noto Serif KR"), local("NotoSerifKR-Bold"), url("../fonts/NotoSerifKR-Bold.woff2") format("woff2"), url("../fonts/NotoSerifKR-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: "Jost";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/Jost-VariableFont_wght.woff2") format("woff2"), url("../fonts/Jost-VariableFont_wght.woff") format("woff");
-}
 .mt-8 {
   margin-top: 8px;
 }
@@ -1329,6 +1287,8 @@ img {
   min-height: 100%;
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+          mask-image: -webkit-radial-gradient(white, black);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
