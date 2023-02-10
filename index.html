@@ -73,7 +73,7 @@
             <section class="section-visual">
                 <div class="video-wrapper" id="videoWrap">
                     <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
-                    <video src="./_resources/video/video_mo_01.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
+                    <video src="./_resources/video/video_mo_01.mp4" preload="auto" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 0}">
                         <source src="./_resources/video/video_mo_1.mp4" type="video/mp4">
                     </video>
                     <video src="./_resources/video/video_mo_02.mp4" muted playsinline poster="" :class="{play : (shuffleIndex[videoCount]) == 1}">
@@ -117,7 +117,7 @@
                 </section>
 
                 <!-- wine -->
-                <section class="section section-wine PC-B" id="wine">
+                <section class="section section-wine PC-B" id="wine" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">Wine</h2>
@@ -150,7 +150,7 @@
                 </section>
 
                 <!-- cuisine -->
-                <section class="section section-cuisine PC-B" id="cuisine">
+                <section class="section section-cuisine PC-B" id="cuisine" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">Cuisine</h2>
@@ -182,7 +182,7 @@
                 </section>
 
                 <!-- art -->
-                <section class="section section-art PC-B" id="art">
+                <section class="section section-art PC-B" id="art" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">Art</h2>
@@ -214,7 +214,7 @@
                 </section>
 
                 <!-- history -->
-                <section class="section section-history PC-B" id="history">
+                <section class="section section-history PC-B" id="history" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">History</h2>
@@ -265,7 +265,7 @@
                 </section>
                 
                 <!-- membership -->
-                <section class="section section-membership PC-B" id="membership">
+                <section class="section section-membership PC-B" id="membership" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">Membership</h2>
@@ -289,7 +289,7 @@
                 </section>
 
                 <!-- book -->
-                <section class="section section-book PC-B PC-B" id="book">
+                <section class="section section-book PC-B PC-B" id="book" v-if="isLargeDivce">
                     <div class="section-inner">
                         <div class="content">
                             <h2 class="section-title">Book</h2>
@@ -378,6 +378,7 @@
                     currentViewType:'mo',
                     isEndedBefore: [false, false, false, false, false, false],
                     videoListEl: [],
+                    isLargeDivce: false,
                 }},
                 methods: {
                     changeLocale() {
@@ -399,9 +400,11 @@
                         let winWidth = window.innerWidth;
 
                         if(winWidth < 1280) {
+                            this.isLargeDivce = false;
                             this.currentViewType = 'mo';
                             this.pickedVideos = this.VIDEO.mo;
                         } else {
+                            this.isLargeDivce = true;
                             this.currentViewType = 'pc';
                             this.pickedVideos = this.VIDEO.pc;
                         }
