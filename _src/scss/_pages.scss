@@ -186,20 +186,20 @@
                     text-align: right;
                 }
             }
-            @media (min-aspect-ratio: 48/100) {
-                .video-wrapper {
-                    video {
-                        max-width: 100%;
-                        // height: 100%;
-                    }
+        }
+        @media (min-aspect-ratio: 48/100) {
+            .video-wrapper {
+                video {
+                    max-width: 100%;
+                    // height: 100%;
                 }
             }
-            @media (max-aspect-ratio: 48/100) {
-                .video-wrapper {
-                    video {
-                        // max-width: 125%;
-                        max-height: 100%;
-                    }
+        }
+        @media (max-aspect-ratio: 48/100) {
+            .video-wrapper {
+                video {
+                    // max-width: 125%;
+                    max-height: 100%;
                 }
             }
         }
