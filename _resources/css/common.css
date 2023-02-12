@@ -1330,12 +1330,12 @@ img {
     text-align: right;
   }
 }
-@media (min-aspect-ratio: 48/100) {
+@media screen and (max-width: 1279px) and (min-aspect-ratio: 48/100) {
   .section-visual .video-wrapper video {
     max-width: 100%;
   }
 }
-@media (max-aspect-ratio: 48/100) {
+@media screen and (max-width: 1279px) and (max-aspect-ratio: 50/100) {
   .section-visual .video-wrapper video {
     max-height: 100%;
   }
