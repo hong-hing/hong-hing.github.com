@@ -1335,7 +1335,7 @@ img {
     max-width: 100%;
   }
 }
-@media screen and (max-width: 1279px) and (max-aspect-ratio: 48/100) {
+@media screen and (max-width: 1279px) and (max-aspect-ratio: 50/100) {
   .section-visual .video-wrapper video {
     max-height: 100%;
   }
