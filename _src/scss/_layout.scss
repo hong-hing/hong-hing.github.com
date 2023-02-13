@@ -166,18 +166,6 @@
             @include font-size-mo(28);
             line-height: 1.5;
             text-align: center;
-            ul {
-                & + ul {
-                    &::before {
-                        content: "";
-                        display: block;
-                        margin: 32px auto 0;
-                        width: 140px;
-                        height: 1px;
-                        background: $color-gray-300;
-                    }
-                }
-            }
             li {
                 margin-top: 24px;
             }
@@ -187,6 +175,16 @@
                 padding: 0 10px;
                 color: $color-wh;
                 line-height: 40px;
+            }
+            .divide {
+                &::before {
+                    content: "";
+                    display: block;
+                    margin: 32px auto;
+                    width: 140px;
+                    height: 1px;
+                    background: $color-gray-300;
+                }
             }
         }
     }

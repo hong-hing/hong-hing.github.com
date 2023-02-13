@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if( _target.classList.contains('active') ) {
                 _navigation.classList.add('active');
-                _wrap.classList.add('overlay');
+                // _wrap.classList.add('overlay');
                 
                 _wrap.append(dim);
             } else {
                 _navigation.classList.remove('active');
-                _wrap.classList.remove('overlay');
+                // _wrap.classList.remove('overlay');
                 document.getElementById('dimmedMenu').remove();
             }
         });
@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainScrollNavEvent = () => {
         let scrollTop = window.pageYOffset;
         let menuSection = document.querySelectorAll('.section');
-        // let menuLI = document.querySelectorAll('.p-main #navigation .spread.PC-B li');
         let menuLI = document.querySelectorAll('.p-main #navigation .spread li');
         let scrollEl = document.querySelector('body');
 
@@ -133,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const snbActiveScroll = () => {
-        // let _menus = document.querySelectorAll('.p-main #navigation .spread.PC-B a');
         let _menus = document.querySelectorAll('.p-main #navigation .spread a');
         let _target, _targetMenu, offsetY;
 
@@ -149,16 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     if( chars[0] == '#' ) {
                         event.preventDefault();
                         _targetMenu = document.querySelector(_target.getAttribute('href'));
-                        console.log(_targetMenu);
                         offsetY = _targetMenu.offsetTop;
-                        console.log(offsetY);
-                        window.scrollTo(0, offsetY);
+                        setTimeout(function() {
+                            window.scrollTo(0, offsetY);
+                        },1);
                     }
 
                     if(_nav.classList.contains('active')) {
                         _nav.classList.remove('active');
                         document.querySelector('.e-menu').classList.remove('active');
-                        document.getElementById('wrap').classList.remove('overlay');
+                        // document.getElementById('wrap').classList.remove('overlay');
                     }
                 });
             } );

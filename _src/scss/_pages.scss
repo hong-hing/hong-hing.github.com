@@ -154,6 +154,12 @@
                 }
             }
         }
+        .copy {
+            text-shadow: 1px 1px 10px rgba($color-gray-200, 0.4);
+            .bar {
+                box-shadow: 1px 1px 5px rgba($color-gray-400, 0.2);
+            }
+        }
         @include t-mobile {
             position: relative;
             .video-wrapper {
