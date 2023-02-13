@@ -626,10 +626,16 @@ img {
 .section-title {
   font-weight: 500;
   line-height: 1.52;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 1279px) {
   .section-title {
     font-size: 48px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .section-title {
+    font-size: 40px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -689,6 +695,10 @@ img {
   min-height: calc(var(--vh, 1vh) * 100);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.wrap.overlay {
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
 }
 @media screen and (min-width: 1280px) {
   .wrap {
@@ -844,7 +854,7 @@ img {
     bottom: 0;
     right: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background: #1b1c1c;
     -webkit-transition: background 0.3s;
     transition: background 0.3s;
@@ -860,7 +870,7 @@ img {
   .header .nav.active .nav-inner {
     overflow: auto;
     opacity: 1;
-    height: auto;
+    height: calc(var(--vh, 1vh) * 100 - 130px);
   }
   .header .spread {
     padding: 15px 0 25px;
@@ -1250,7 +1260,6 @@ img {
   .section figure {
     width: 580px;
     height: 580px;
-    background: rgba(255, 255, 255, 0.3);
   }
   .section figure img {
     width: 100%;
@@ -1273,7 +1282,7 @@ img {
   overflow: hidden;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .section-visual .video-wrapper video {
   opacity: 0;
@@ -1335,7 +1344,7 @@ img {
     max-width: 100%;
   }
 }
-@media screen and (max-width: 1279px) and (max-aspect-ratio: 50/100) {
+@media screen and (max-width: 1279px) and (max-aspect-ratio: 48/100) {
   .section-visual .video-wrapper video {
     max-height: 100%;
   }
@@ -1435,10 +1444,9 @@ img {
     font-size: 32px;
   }
 }
-.section-opnng .section-title {
-  line-height: span;
-  line-height-display: block;
-  line-height-color: #666;
+.section-opnng .section-title span {
+  display: block;
+  color: #666;
 }
 .section-opnng .description p + p {
   margin-top: 16px;

@@ -2,9 +2,13 @@
 .section-title {
     font-weight: 500;
     line-height: 1.52;
+    text-transform: uppercase;
     @include t-mobile {
         font-size: 48px;
     }
+    @media screen and (max-width: 320px) {
+        font-size: 40px;
+    } 
     @include desktop2 {
         font-size: 64px;
         color: $color-wh;
