@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if( _target.classList.contains('active') ) {
                 _navigation.classList.add('active');
+                _wrap.classList.add('overlay');
                 
                 _wrap.append(dim);
             } else {
                 _navigation.classList.remove('active');
+                _wrap.classList.remove('overlay');
                 document.getElementById('dimmedMenu').remove();
             }
         });

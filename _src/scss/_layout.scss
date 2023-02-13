@@ -1,6 +1,10 @@
 .wrap {
     min-height: $vh100;
     box-sizing: border-box;
+    &.overlay {
+        overflow: hidden;
+        height: $vh100;
+    }
     // @include t-mobile {
     //     padding: {
     //         top: 60px;
@@ -138,7 +142,7 @@
                 bottom: 0;
                 right: 0;
                 width: 100vw;
-                height: 100vh;
+                height: $vh100;
                 background: $color-gray-100;
                 transition: background 0.3s;
                 .nav-header {
@@ -152,7 +156,7 @@
                 .nav-inner {
                     overflow: auto;
                     opacity: 1;
-                    height: auto;
+                    height: calc($vh100 - 130px);
                 }
             }
         }
