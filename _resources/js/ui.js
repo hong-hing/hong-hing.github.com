@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if( _target.classList.contains('active') ) {
                 _navigation.classList.add('active');
-                // _wrap.classList.add('overlay');
+                _wrap.classList.add('overlay');
                 
                 _wrap.append(dim);
             } else {
                 _navigation.classList.remove('active');
-                // _wrap.classList.remove('overlay');
+                _wrap.classList.remove('overlay');
                 document.getElementById('dimmedMenu').remove();
             }
         });
@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainScrollNavEvent = () => {
         let scrollTop = window.pageYOffset;
         let menuSection = document.querySelectorAll('.section');
+        let navEl = document.querySelector('.p-main #navigation');
         let menuLI = document.querySelectorAll('.p-main #navigation .spread li');
         let scrollEl = document.querySelector('body');
 
@@ -115,20 +116,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         scrollBottom(scrollEl);
 
-        menuSection.forEach( function(item, index) { 
-            let targetTop = item.offsetTop - 100;
-
-            if ( targetTop <= scrollTop ) { 
-                removeActiveClassevent(menuLI[index]);
-                menuLI[index].classList.add('active'); 
-            } else if(scrollTop <= 52) {
-                removeActiveClassevent(menuLI[index]);
-                menuLI[0].classList.add('active');
-            } else if(bodyScrollBottom <= 0) {
-                removeActiveClassevent(menuLI[index]);
-                menuLI[menuLI.length - 2].classList.add('active');
-            }
-        });
+        if( !(navEl.classList.contains('active')) ) {
+            menuSection.forEach( function(item, index) { 
+                let targetTop = item.offsetTop - 100;
+    
+                if ( targetTop <= scrollTop ) { 
+                    removeActiveClassevent(menuLI[index]);
+                    menuLI[index].classList.add('active'); 
+                } else if(scrollTop <= 52) {
+                    removeActiveClassevent(menuLI[index]);
+                    menuLI[0].classList.add('active');
+                } else if(bodyScrollBottom <= 0) {
+                    removeActiveClassevent(menuLI[index]);
+                    menuLI[menuLI.length - 2].classList.add('active');
+                }
+            });
+        }
     };
 
     const snbActiveScroll = () => {
@@ -156,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(_nav.classList.contains('active')) {
                         _nav.classList.remove('active');
                         document.querySelector('.e-menu').classList.remove('active');
-                        // document.getElementById('wrap').classList.remove('overlay');
+                        document.getElementById('wrap').classList.remove('overlay');
                     }
                 });
             } );
