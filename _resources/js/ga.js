@@ -1,5 +1,5 @@
 // 운영일 경우에만 실행
-if(window.location.hostname == 'www.baropnng.com' || window.location.hostname == 'www.baropnng.co.kr' || window.location.hostname == 'www.baropnng.kr' || window.location.hostname == 'www.baropnng.net') {
+if(window.location.hostname == 'www.baropnng.com') {
     console.log('window.location.hostname', window.location.hostname);
     let ga_id = 'G-XNSHWEFPFH'; // 운영 GA id
     var head = document.getElementsByTagName('head')[0];
