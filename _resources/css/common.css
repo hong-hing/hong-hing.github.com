@@ -1192,7 +1192,6 @@ img {
   }
   .section-title span {
     font-size: 40px;
-    color: #666;
   }
   .section .description {
     margin-top: 32px;
@@ -1344,30 +1343,30 @@ img {
 }
 .loaded .section-visual .copy span, .loaded .section-visual .copy strong {
   opacity: 1;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.9s;
+  transition: opacity 0.9s;
 }
 .loaded .section-visual .copy span:first-of-type {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
 .loaded .section-visual .copy span:nth-of-type(2) {
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
 }
 .loaded .section-visual .copy .bar {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   width: auto;
-  -webkit-transition: opacity 0.15s, width 0.5s;
-  transition: opacity 0.15s, width 0.5s;
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
+  -webkit-transition: opacity 0.5s, width 0.5s;
+  transition: opacity 0.5s, width 0.5s;
+  -webkit-transition-delay: 2.25s;
+          transition-delay: 2.25s;
 }
 .loaded .section-visual .copy strong {
-  -webkit-transition-delay: 2s;
-          transition-delay: 2s;
+  -webkit-transition-delay: 2.75s;
+          transition-delay: 2.75s;
 }
 @media screen and (max-width: 1279px) {
   .section-visual {
@@ -1522,9 +1521,6 @@ img {
 @media screen and (max-width: 1279px) {
   .section-opnng .section-title > span {
     display: block;
-  }
-  .section-opnng .section-title span {
-    color: #666;
   }
   .section-opnng .content {
     padding-bottom: 80px;
