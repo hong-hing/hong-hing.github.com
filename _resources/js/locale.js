@@ -1,8 +1,9 @@
 const messages = {
     ko: {
         VISUAL: {
-            DESC1: `취향을 갖지 마세요.`, 
-            DESC2: `출구가 없으니까요.`, 
+            DESC1: `가능하면&nbsp;`, 
+            DESC2: `취향을 갖지 마세요.`,
+            DESC3: `출구가 없으니까요.`,
         },
         OPNNG: {
             DESC1: `오프닝은 ‘취향을 여는 공간＇이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 ‘와인과 미술＇이라는 취향을 선보이는 공간입니다.`,
@@ -59,8 +60,9 @@ const messages = {
     },
     en: {
         VISUAL: {
-            DESC1: `The best thing to do is not to have taste`,
-            DESC2: `Since there is no way out`,
+            DESC1: `As far as possible, `, 
+            DESC2: `it is best to not have taste`,
+            DESC3: `since there is no way out.`,
         },
         OPNNG: {
             DESC1: `Described as a "space for finding one's own taste," <br class="PC-B">OPNNG is devoted to curating wine and fine art, two things that have long been highly valued throughout history.`,

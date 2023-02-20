@@ -24,6 +24,9 @@
     &-info {
         color: $color-gray-300;
     }
+    &-lowercase {
+        text-transform: lowercase;
+    }
 }
 
 @mixin multiEllipse ($line: 2) {

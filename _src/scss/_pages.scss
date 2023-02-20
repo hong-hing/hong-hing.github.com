@@ -8,7 +8,7 @@
     }
     @include t-mobile {
         &-inner {
-            padding: 32px 0 0;
+            padding: 52px 0 0;
         }
         .content {
             padding: 0 30px;
@@ -18,8 +18,10 @@
         }
         &-title {
             line-height: 1;
-            span {
+            & > span {
                 display: block;
+            }
+            span {
                 font-size: 40px;
                 color: $color-gray-300;
             }
@@ -52,6 +54,9 @@
         }
     }
     @include tablet {
+        &-inner {
+            padding-top: 76px;
+        }
         .content, .image-list, .history-list, .benefit-list {
             margin: 0 auto;
             max-width: 770px;
@@ -159,6 +164,33 @@
             .bar {
                 box-shadow: 1px 1px 5px rgba($color-gray-400, 0.2);
             }
+            span, strong {
+                opacity: 0;
+            }
+            .bar {
+                width: 0;
+            }
+            .loaded & {
+                span, strong {
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+                span:first-of-type {
+                    transition-delay: 0s;
+                }
+                span:nth-of-type(2) {
+                    transition-delay: 1s;
+                }
+                .bar {
+                    flex: 1;
+                    width: auto;
+                    transition: opacity 0.15s, width .5s;
+                    transition-delay: 1.5s;
+                }
+                strong {
+                    transition-delay: 2s;
+                }
+            }
         }
         @include t-mobile {
             position: relative;
@@ -212,6 +244,18 @@
             html[lang="en"] & {
                 .copy {
                     span {
+                        font-size: 20px;
+                    }
+                    strong {
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 360px) {
+            html[lang="en"] & {
+                .copy {
+                    span {
                         font-size: 15px;
                     }
                     strong {
@@ -237,7 +281,6 @@
             }
             html[lang="en"] & {
                 .copy {
-                    max-width: 770px;
                     span:not(.bar) {
                         font-size: 15px;
                         font-size: 3vw;
@@ -291,6 +334,9 @@
                         margin-bottom: 60px;
                         width: 100%;
                         font-size: 40px;
+                        &:first-of-type {
+                            margin-bottom: 0;
+                        }
                     }
                     .bar {
                         margin: 0 10px;
@@ -307,12 +353,6 @@
     }
 
     &-opnng {
-        .section-title {
-            span {
-                display: block;
-                color: $color-gray-300;
-            }
-        }
         .description {
             p {
                 & + p {
@@ -322,8 +362,32 @@
             
         }
         @include t-mobile {
+            .section-title {
+                & > span {
+                    display: block;
+                }
+                span {
+                    color: $color-gray-300;
+                }
+            }
             .content {
                 padding-bottom: 80px;
+            }
+            .description {
+                .head-desc {
+                    font-size: 15px;
+                }
+            }
+            .btn-area {
+                display: flex;
+                .btn {
+                    & + .btn {
+                        margin: {
+                            top: 0;
+                            left: 8px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -451,8 +515,14 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-bottom: 40px;
+                height: 100%;
                 font-size: 72px;
                 font-size: 19vw;
+                box-sizing: border-box;
                 strong, span {
                     opacity: 0;
                     position: relative;
@@ -477,6 +547,7 @@
                     }
                     span {
                         right: -40px;
+                        transition-delay: 1s;
                     }
                 }
             }
@@ -758,24 +829,53 @@
         @include t-mobile {
             .content {
                 padding-bottom: 60px;
+                .description {
+                    p {
+                        font-size: 15px;
+                        color: $color-gray-100;
+                        & + p {
+                            margin-top: 24px;
+                        }
+                    }
+                }
             }
             .btn-normal {
                 margin-top: 16px;
                 padding: 0 16px;
+                width: auto;
                 height: 48px;
                 font-size: 16px;
                 color: $color-gray-100;
                 line-height: 46px;
             }
             .btn-area {
-                margin-top: 105px;
+                margin-top: 0;
+                text-align: left;
+                .btn {
+                    & + .btn {
+                        margin-top: 105px;
+                    }
+                }
             }
         }
         @include tablet {
+            .btn-area {
+                display: flex;
+                flex-direction: column;
+                .btn-normal {
+                    max-width: 320px;
+                }
+            }
         }
         @include desktop2 {
             .content {
                 padding-bottom: 350px;
+                .description {
+                    p {
+                        font-size: 14px;
+                        color: $color-wh;
+                    }
+                }
             }
             .btn-area {
                 margin: 32px auto 0;
@@ -788,16 +888,6 @@
                     }
                 }
             }
-        }
-        @include desktop {
-        }
-    }
-    &-cs {
-        @include t-mobile {
-        }
-        @include tablet {
-        }
-        @include desktop2 {
         }
         @include desktop {
         }

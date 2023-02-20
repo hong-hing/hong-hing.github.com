@@ -32,13 +32,9 @@
         }
     }
     &-secondary {
-        color: $color-purple-100;
+        color: $color-wh;
         border: 1px solid;
-        border-image-source: linear-gradient(to right, #f29f53 0%, #e51b7f 51%, #a6379b 100%);
-        border-image-slice: 1;
-        &:hover {
-            border-color: $color-gray-100;
-        }
+        background-image: linear-gradient(to right, #f29f53 2%, #cb4e8c 51%, #a53893 100%);
     }
     &-tertiary {
         margin: 0 auto;

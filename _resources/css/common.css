@@ -225,13 +225,10 @@ img {
   border-color: #1b1c1c;
 }
 .btn-secondary {
-  color: #c50bc9;
+  color: #fff;
   border: 1px solid;
-  border-image-source: linear-gradient(to right, #f29f53 0%, #e51b7f 51%, #a6379b 100%);
-  border-image-slice: 1;
-}
-.btn-secondary:hover {
-  border-color: #1b1c1c;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(2%, #f29f53), color-stop(51%, #cb4e8c), to(#a53893));
+  background-image: linear-gradient(to right, #f29f53 2%, #cb4e8c 51%, #a53893 100%);
 }
 .btn-tertiary {
   margin: 0 auto;
@@ -653,6 +650,9 @@ img {
 }
 .text-info {
   color: #666;
+}
+.text-lowercase {
+  text-transform: lowercase;
 }
 
 .text-ellipsis-2 {
@@ -1176,7 +1176,7 @@ img {
 }
 @media screen and (max-width: 1279px) {
   .section-inner {
-    padding: 32px 0 0;
+    padding: 52px 0 0;
   }
   .section .content {
     padding: 0 30px;
@@ -1187,8 +1187,10 @@ img {
   .section-title {
     line-height: 1;
   }
-  .section-title span {
+  .section-title > span {
     display: block;
+  }
+  .section-title span {
     font-size: 40px;
     color: #666;
   }
@@ -1218,6 +1220,9 @@ img {
   }
 }
 @media screen and (min-width: 640px) and (max-width: 1279px) {
+  .section-inner {
+    padding-top: 76px;
+  }
   .section .content, .section .image-list, .section .history-list, .section .benefit-list {
     margin: 0 auto;
     max-width: 770px;
@@ -1331,6 +1336,39 @@ img {
   -webkit-box-shadow: 1px 1px 5px rgba(153, 153, 153, 0.2);
           box-shadow: 1px 1px 5px rgba(153, 153, 153, 0.2);
 }
+.section-visual .copy span, .section-visual .copy strong {
+  opacity: 0;
+}
+.section-visual .copy .bar {
+  width: 0;
+}
+.loaded .section-visual .copy span, .loaded .section-visual .copy strong {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.loaded .section-visual .copy span:first-of-type {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.loaded .section-visual .copy span:nth-of-type(2) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.loaded .section-visual .copy .bar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: auto;
+  -webkit-transition: opacity 0.15s, width 0.5s;
+  transition: opacity 0.15s, width 0.5s;
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.loaded .section-visual .copy strong {
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
 @media screen and (max-width: 1279px) {
   .section-visual {
     position: relative;
@@ -1377,6 +1415,14 @@ img {
 }
 @media screen and (max-width: 639px) {
   html[lang=en] .section-visual .copy span {
+    font-size: 20px;
+  }
+  html[lang=en] .section-visual .copy strong {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 360px) {
+  html[lang=en] .section-visual .copy span {
     font-size: 15px;
   }
   html[lang=en] .section-visual .copy strong {
@@ -1394,9 +1440,6 @@ img {
   .section-visual .copy strong {
     font-size: 30px;
     font-size: 5vw;
-  }
-  html[lang=en] .section-visual .copy {
-    max-width: 770px;
   }
   html[lang=en] .section-visual .copy span:not(.bar) {
     font-size: 15px;
@@ -1462,6 +1505,9 @@ img {
     width: 100%;
     font-size: 40px;
   }
+  html[lang=en] .section-visual .copy span:not(.bar):first-of-type {
+    margin-bottom: 0;
+  }
   html[lang=en] .section-visual .copy .bar {
     margin: 0 10px;
     max-width: 430px;
@@ -1470,16 +1516,30 @@ img {
     font-size: 32px;
   }
 }
-.section-opnng .section-title span {
-  display: block;
-  color: #666;
-}
 .section-opnng .description p + p {
   margin-top: 16px;
 }
 @media screen and (max-width: 1279px) {
+  .section-opnng .section-title > span {
+    display: block;
+  }
+  .section-opnng .section-title span {
+    color: #666;
+  }
   .section-opnng .content {
     padding-bottom: 80px;
+  }
+  .section-opnng .description .head-desc {
+    font-size: 15px;
+  }
+  .section-opnng .btn-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-opnng .btn-area .btn + .btn {
+    margin-top: 0;
+    margin-left: 8px;
   }
 }
 .section-wine .one {
@@ -1614,8 +1674,22 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 40px;
+    height: 100%;
     font-size: 72px;
     font-size: 19vw;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .section-cuisine .text-move strong, .section-cuisine .text-move span {
     opacity: 0;
@@ -1640,6 +1714,8 @@ img {
   }
   .section-cuisine .text-move.detect span {
     right: -40px;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s;
   }
 }
 @media screen and (min-width: 640px) and (max-width: 1279px) {
@@ -1897,21 +1973,51 @@ img {
   .section-book .content {
     padding-bottom: 60px;
   }
+  .section-book .content .description p {
+    font-size: 15px;
+    color: #1b1c1c;
+  }
+  .section-book .content .description p + p {
+    margin-top: 24px;
+  }
   .section-book .btn-normal {
     margin-top: 16px;
     padding: 0 16px;
+    width: auto;
     height: 48px;
     font-size: 16px;
     color: #1b1c1c;
     line-height: 46px;
   }
   .section-book .btn-area {
+    margin-top: 0;
+    text-align: left;
+  }
+  .section-book .btn-area .btn + .btn {
     margin-top: 105px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1279px) {
+  .section-book .btn-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-book .btn-area .btn-normal {
+    max-width: 320px;
   }
 }
 @media screen and (min-width: 1280px) {
   .section-book .content {
     padding-bottom: 350px;
+  }
+  .section-book .content .description p {
+    font-size: 14px;
+    color: #fff;
   }
   .section-book .btn-area {
     margin: 32px auto 0;

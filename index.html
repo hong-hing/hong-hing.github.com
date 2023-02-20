@@ -37,20 +37,6 @@
                         <div class="logo"><img src="./_resources/images/logo.svg" alt="OPNNG"></div>
                     </header>
                     <div class="nav-inner">
-                        <!-- <div class="spread MO-B">
-                            <ul class="menu">
-                                <li class="active"><a href="/index.html">OPNNG</a></li>
-                                <li><a href="./html/wine.html">Wine</a></li>
-                                <li><a href="./html/cuisine.html">Cuisine</a></li>
-                                <li><a href="./html/art.html">Art</a></li>
-                                <li><a href="./html/history.html">History</a></li>
-                                <li><a href="./html/membership.html">Membership</a></li>
-                            </ul>
-                            <ul class="menu">
-                                <li><a href="./html/book.html">Book</a></li>
-                                <li><a href="https://www.instagram.com/bar_opnng/">Instagram</a></li>
-                            </ul>
-                        </div> -->
                         <div class="spread">
                             <ul class="menu">
                                 <li><a href="#opnng">OPNNG</a></li>
@@ -95,7 +81,7 @@
                         <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_06.mp4" type="video/mp4">
                     </video>
                 </div>
-                <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">취향을 갖지 마세요</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC2')">출구가 없으니까요.</strong></p>
+                <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">가능하면</span><span v-html="$t('VISUAL.DESC2')">취향을 갖지 마세요.</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC3')">출구가 없으니까요.</strong></p>
             </section>
 
             <main class="contents" id="contents">
@@ -103,7 +89,7 @@
                 <section class="section section-opnng" id="opnng">
                     <div class="section-inner">
                         <div class="content">
-                            <h2 class="section-title"><span>OPNNG=</span><strong>Opening</strong></h2>
+                            <h2 class="section-title"><span>OPNNG <span class="text-lowercase">is</span></span> <strong>Opening</strong></h2>
                             <div class="description">
                                 <p class="head-desc" v-html="$t('OPNNG.DESC1')">오프닝은 ‘취향을 여는 공간'이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 <br class="PC-B">‘와인과 미술'이라는 취향을 선보이는 공간입니다.</p>
                                 <p class="head-desc" v-html="$t('OPNNG.DESC2')">오프닝은 500여종의 와인을 소개하고 있으며, 또한, 와인과 함께 즐기기에 좋은 다양한 식사메뉴를 선보이고 있습니다.</p>
@@ -125,7 +111,7 @@
                         <div class="content">
                             <h2 class="section-title">Wine</h2>
                             <div class="description">
-                                <p v-html="$t('WINE.DESC1')">오프닝은 전문 소믈리에를 통해서 엄선된 <br class="PC-B">500여종의 와인을 선보입니다.</p>
+                                <p class="head-desc" v-html="$t('WINE.DESC1')">오프닝은 전문 소믈리에를 통해서 엄선된 <br class="PC-B">500여종의 와인을 선보입니다.</p>
                                 <p v-html="$t('WINE.DESC2')">모든 와인들은, 오프닝만의 전용 타블렛 PC 메뉴판을 통하여, 품종, 종류, 지역, 특징(탄닌 / 바디감 / 당도 등)으로 고객이 직접 필터링 할 수 있습니다.</p>
                                 <p v-html="$t('WINE.DESC3')">소믈리에의 추천을 통해 와인을 추천받을 수 있음은 물론이고, <br class="PC-B">오프닝만의 메뉴판을 통해서 고객이 개인의 취향에 맞는 와인을 직접 고를 수 있는 새로운 경험을 선사합니다.</p>
                             </div>
@@ -158,7 +144,7 @@
                         <div class="content">
                             <h2 class="section-title">Cuisine</h2>
                             <div class="description">
-                                <p v-html="$t('CUISINE.DESC1')">오프닝의 메뉴들은 한끼의 식사로 충분한 것들과, 와인을 보다 맛있게 <br class="PC-B">즐길 수 있도록 돕는 안주류 등으로 구성되어 있습니다.</p>
+                                <p class="head-desc" v-html="$t('CUISINE.DESC1')">오프닝의 메뉴들은 한끼의 식사로 충분한 것들과, 와인을 보다 맛있게 <br class="PC-B">즐길 수 있도록 돕는 안주류 등으로 구성되어 있습니다.</p>
                                 <p v-html="$t('CUISINE.DESC2')">크게, 스몰디쉬 / 파스타 / 스테이크 / 치즈 / 샤퀴테리 / 디저트로 구성된 오프닝의 모든 메뉴들은 <br class="PC-B">‘와인과의 조화‘를 무엇보다 지향하고 있으며, 조화를 넘어서 와인도 음식도 더 맛있을 수 있는 궁극의 마리아쥬를 목표로 <br class="PC-B">하고 있습니다.</p>
                             </div>
                         </div>
@@ -301,7 +287,8 @@
                                 <p v-html="$t('BOOK.DESC2')">오프닝은 노키즈 존이며, 이용 시 4인 이하 기준 750ml 와인 1병 이상을 주문해 주셔야 합니다. 또한 크리스마스, 발렌타인 데이 등의 특별한 날에는 별도 코스 메뉴를 운영하고 있으며, 운영 방식은 사전에 별도 고지하고 있습니다.</p>
                             </div>
                             <div class="btn-area">
-                                <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-underline">Reservation guide for foreigners</a>
+                                <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-normal MO-IB">Reservation guide for foreigners</a>
+                                <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-underline PC-B">Reservation guide for foreigners</a>
                                 <a href="https://app.catchtable.co.kr/ct/shop/bar_opnng" target="_blank" class="btn btn-tertiary" v-html="$t('BOOK.BUTTON')">캐치테이블 예약하기 ></a>
                             </div>
                         </div>
