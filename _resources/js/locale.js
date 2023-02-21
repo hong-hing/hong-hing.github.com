@@ -68,7 +68,7 @@ const messages = {
             DESC1: `Described as a "space for finding one's own taste," <br class="PC-B">OPNNG is devoted to curating wine and fine art, two things that have long been highly valued throughout history.`,
             DESC2: `In order to provide the best wine experience, OPNNG offers over 500 varieties of wines in conjunction with diverse dishes.`,
             DESC3: `A number of pieces of art from home and abroad are also displayed and presented inside the space. By combining delicacies with art, OPNNG is designed to provide guests with a pleasure they will never forget.`,
-            DESC4: `In this modern world where individual tastes are constantly and rapidly advancing, OPPNG is considered a place that must be inevitable.`,
+            DESC4: `In this modern world where individual tastes are constantly and rapidly advancing, OPNNG is considered a place that must be inevitable.`,
             DESC5: `In this regard, we will be present.`,
             BUTTON: `Book`
         },
@@ -84,7 +84,7 @@ const messages = {
         ART: {
             DESC1: `Within the space of OPNNG, <br class="PC-B">various works of art owned by the CEO are displayed.`,
             DESC2: `In addition to the collection being on display at all times, <br class="PC-B">special exhibitions are held 1 to 2 times a year featuring the collection's artworks.`,
-            DESC3: `The "rhetoric of collection" is a means by which OPPNG conveys the message of the exhibition in a manner other than a museum or gallery.`,
+            DESC3: `The "rhetoric of collection" is a means by which OPNNG conveys the message of the exhibition in a manner other than a museum or gallery.`,
         },
         HISTORY: {
             DATE1: `NOV. 2020`,
@@ -111,7 +111,7 @@ const messages = {
             },
         },
         BOOK: {
-            DESC1: `The reservation system of OPNNG is operated by Catch Table. <br class="PC-B">For reservations of more than four people, a phone booking service is available at <a href="tel:820220885844">(82)2-2088-5844</a>.`,
+            DESC1: `The reservation system of OPNNG is operated by Catchtable. <br class="PC-B">For reservations of more than four people, a phone booking service is available at <a href="tel:820220885844">(82)2-2088-5844</a>.`,
             DESC2: `OPNNG is a no-kids zone.<br>
             OPNNG requires the minimum order of one bottle of 750ml wine per table. <br class="PC-B">During special occasions such as Christmas and Valentine's Day, OPNNG offers a special menu and gives advance notice of the event.`,
             BUTTON: `Book via Catchtable &gt;`,
