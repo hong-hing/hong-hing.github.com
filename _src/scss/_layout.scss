@@ -324,6 +324,9 @@
     .copyright {
         color: $color-gray-300;
     }
+    .logo-opening {
+        display: inline-block;
+    }
 
     @include t-mobile {
         padding: 24px 20px;
@@ -347,6 +350,10 @@
         }
         .copyright {
             margin-top: 24px;
+        }
+        .logo-opening {
+            margin-left: 8px;
+            width: 40px;
         }
     }
     @include tablet {
@@ -390,6 +397,10 @@
                 width: 77px;
                 filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
             }
+        }
+        .logo-opening {
+            margin-left: 12px;
+            width: 56px;
         }
     }
 }

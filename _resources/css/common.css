@@ -1055,6 +1055,9 @@ img {
 .footer .copyright {
   color: #666;
 }
+.footer .logo-opening {
+  display: inline-block;
+}
 @media screen and (max-width: 1279px) {
   .footer {
     padding: 24px 20px;
@@ -1077,6 +1080,10 @@ img {
   }
   .footer .copyright {
     margin-top: 24px;
+  }
+  .footer .logo-opening {
+    margin-left: 8px;
+    width: 40px;
   }
 }
 @media screen and (min-width: 640px) and (max-width: 1279px) {
@@ -1121,6 +1128,10 @@ img {
     width: 77px;
     -webkit-filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
             filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
+  }
+  .footer .logo-opening {
+    margin-left: 12px;
+    width: 56px;
   }
 }
 
