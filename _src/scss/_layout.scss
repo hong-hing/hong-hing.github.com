@@ -354,6 +354,10 @@
         .logo-opening {
             margin-left: 8px;
             width: 40px;
+            img {
+                margin-top: 2px;
+                vertical-align: middle;
+            }
         }
     }
     @include tablet {

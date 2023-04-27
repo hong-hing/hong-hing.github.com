@@ -1085,6 +1085,10 @@ img {
     margin-left: 8px;
     width: 40px;
   }
+  .footer .logo-opening img {
+    margin-top: 2px;
+    vertical-align: middle;
+  }
 }
 @media screen and (min-width: 640px) and (max-width: 1279px) {
   .footer-wrap {
