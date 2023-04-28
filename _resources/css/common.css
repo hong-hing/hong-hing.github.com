@@ -1044,6 +1044,13 @@ img {
   color: #fff;
 }
 .footer-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
   color: #666;
 }
 .footer .details {
@@ -1081,12 +1088,20 @@ img {
   .footer .copyright {
     margin-top: 24px;
   }
+  .footer .logo-en {
+    margin-top: -2px;
+    width: 72px;
+    line-height: 1;
+  }
+  .footer .logo-en img {
+    width: 100%;
+    vertical-align: middle;
+  }
   .footer .logo-opening {
-    margin-left: 8px;
-    width: 40px;
+    width: 60px;
   }
   .footer .logo-opening img {
-    margin-top: 2px;
+    margin-top: 6px;
     vertical-align: middle;
   }
 }
@@ -1117,24 +1132,34 @@ img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .footer .details dl {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 40px;
-    margin-left: 80px;
+    gap: 36px;
+    margin-left: 60px;
   }
   .footer .details .copyright {
-    margin: 16px 0 0 80px;
+    margin: 16px 0 0 60px;
   }
-  .footer-logo img {
-    width: 77px;
-    -webkit-filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
-            filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
+  .footer-logo {
+    padding-top: 20px;
+  }
+  .footer .logo-en {
+    margin-top: -2px;
+    width: 72px;
+    line-height: 1;
+  }
+  .footer .logo-en img {
+    width: 100%;
+    vertical-align: middle;
   }
   .footer .logo-opening {
-    margin-left: 12px;
+    margin-top: 6px;
     width: 56px;
   }
 }
