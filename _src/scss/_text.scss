@@ -3,16 +3,16 @@
     font-weight: 500;
     line-height: 1.52;
     text-transform: uppercase;
-    @include t-mobile {
+    // @include t-mobile {
         font-size: 48px;
-    }
-    @media screen and (max-width: 320px) {
-        font-size: 40px;
-    } 
-    @include desktop2 {
-        font-size: 64px;
-        color: $color-wh;
-    }
+    // }
+    // @media screen and (max-width: 320px) {
+    //     font-size: 40px;
+    // } 
+    // @include desktop2 {
+    //     font-size: 64px;
+    //     color: $color-wh;
+    // }
     strong {
         font-weight: 500;
     }
@@ -27,6 +27,23 @@
     &-lowercase {
         text-transform: lowercase;
     }
+    &-small {
+        // @include t-mobile {
+            font-size: 40px;
+        // }
+        // @media screen and (max-width: 320px) {
+        //     font-size: 32px;
+        // } 
+        // @include desktop2 {
+        //     font-size: 48px;
+        //     color: $color-wh;
+        // }
+    }
+}
+.wedding-date {
+    margin-top: 32px;
+    font-size: 24px;
+    line-height: 1.2;
 }
 
 @mixin multiEllipse ($line: 2) {

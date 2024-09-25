@@ -3,13 +3,13 @@ html, body {
     font-family: $font-sansserif;
     line-height: 1.52;
     @include t-mobile {
-        font-size: 15px;
+        font-size: 18px;
     }
     @include mobile-small {
-        font-size: 15px;
+        font-size: 18px;
     }
     @include desktop2 {
-        font-size: 20px;
+        font-size: 24px;
     }
     
 }
@@ -18,7 +18,7 @@ html, body, input, a, button {
 }
 
 strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 pre {

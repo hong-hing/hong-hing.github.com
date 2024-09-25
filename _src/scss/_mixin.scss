@@ -1,6 +1,6 @@
-$font-device: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+$font-device: "SUITE Variable", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
 $font-serif: "Noto Serif KR", "NotoSerifKR", Times, "Times New Roman", Georgia, serif;
-$font-sansserif: "Jost", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+$font-sansserif: "SUITE Variable", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
 
 $bg_url: "../images/";
 
@@ -23,8 +23,49 @@ $color-red-100: #ff3d00;
 // 640, 960 x 540, 1024 x 640, 1366 x 768, 1920
 $breakpoint-small: 360px;
 $breakpoint-mobile: 640px;
-$breakpoint-tablet: 1280px;
-$breakpoint-desktop: 1366px;    // ipad pro 12.9inch
+$breakpoint-tablet: 640px;
+$breakpoint-desktop: 640px;    // ipad pro 12.9inch
+
+// $breakpoint-small: 360px;
+// $breakpoint-mobile: 640px;
+// $breakpoint-tablet: 1280px;
+// $breakpoint-desktop: 1366px;    // ipad pro 12.9inch
+
+// @mixin mobile-small {
+//     @media screen and (max-width: #{$breakpoint-small - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin mobile {
+//     @media screen and (max-width: #{$breakpoint-mobile - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin tablet {
+//     @media screen and (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin t-mobile {
+//     @media screen and (max-width: #{$breakpoint-tablet - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin desktop {
+//     @media screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin desktop2 {
+//     @media screen and (min-width: #{$breakpoint-tablet}) {
+//         @content;
+//     }
+// }
 
 @mixin mobile-small {
     @media screen and (max-width: #{$breakpoint-small - 1px}) {

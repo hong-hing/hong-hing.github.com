@@ -1,4 +1,6 @@
 .wrap {
+    margin: 0 auto;
+    max-width: 678px;
     min-height: $vh100;
     box-sizing: border-box;
     &.overlay {
@@ -10,12 +12,12 @@
     //         top: 60px;
     //     }
     // }
-    @include desktop2 {
-        background: $color-gray-000;
-        .container {
+    // @include desktop2 {
+    //     background: $color-gray-000;
+    //     .container {
 
-        }
-    }
+    //     }
+    // }
 }
 .inner {
     box-sizing: border-box;
@@ -27,6 +29,8 @@
     top: 0;
     left: 0;
     right: 0;
+    max-width: 678px;
+    margin: 0 auto;
     &-inner {
         display: flex;
         justify-content: space-between;
@@ -64,11 +68,11 @@
         }
     }
     // header
-    @include t-mobile {
+    // @include t-mobile {
         transition: opacity .35s;
         .down-scroll & {
-            opacity: 0;
-            visibility: hidden;
+            // opacity: 0;
+            // visibility: hidden;
             // transition: opacity .35s;
         }
         .up-scroll &, & {
@@ -91,6 +95,7 @@
             left: 80px;
             right: 80px;
             flex: 1;
+            font-size: 24px;
             text-align: center;
             img {
                 width: 96px;
@@ -117,10 +122,10 @@
                 height: 34px;
                 box-sizing: border-box;
                 .logo {
-                    opacity: 0;
-                    visibility: hidden;
+                    // opacity: 0;
+                    // visibility: hidden;
                     flex: 1;
-                    margin-left: -40px;
+                    // margin-left: -40px;
                     text-align: center;
                     img {
                         opacity: 0.5;
@@ -200,7 +205,7 @@
                 }
             }
         }
-    }
+    // }
     @include tablet {
         &-inner, .nav.active .nav-header {
             margin: 0 auto;
@@ -208,89 +213,89 @@
         }
     }
     // header
-    @include desktop2 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        flex: 0 0 auto;
-        width: 180px;
-        &-inner {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: {
-                top: 124px;
-                bottom: 100px;
-            }
-            padding-bottom: 100px;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-        }
-        h1.logo {
-            position: absolute;
-            top: 40px;
-            left: 32px;
-            width: 100%;
-            img {
-                width: 78px;
-                filter: brightness(0) invert(1);
-            }
-        }
-        .nav {
-            display: flex;
-            align-items: center;
-            flex: 1;
-            width: 100%;
-            a {
-                display: block;
-                padding-left: 32px;
-                width: 100%;
-                opacity: 0.5;
-                font-size: 18px;
-                color: $color-wh;
-                line-height: 1.78;
-                box-sizing: border-box;
-                transition: opacity 0.35s;
-                &:hover {
-                    opacity: 0.75;
-                }
-            }
-            .active {
-                a {
-                    opacity: 1;
-                }
-            }
-            .divide {
-                margin-top: 40px;
-            }
-            li {
-                & + li {
-                    margin-top: 20px;
-                }
-            }
-        }
-        .btn-normal {
-            padding: 0 32px;
-            width: 100%;
-            color: $color-gray-400;
-            text-align: left;
-            border: none;
-            &:hover {
-                color: rgba($color-wh, 0.75);
-            }
-        }
-    }
+    // @include desktop2 {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     flex: 0 0 auto;
+    //     width: 180px;
+    //     &-inner {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: space-between;
+    //         padding: {
+    //             top: 124px;
+    //             bottom: 100px;
+    //         }
+    //         padding-bottom: 100px;
+    //         width: 100%;
+    //         height: 100%;
+    //         box-sizing: border-box;
+    //     }
+    //     h1.logo {
+    //         position: absolute;
+    //         top: 40px;
+    //         left: 32px;
+    //         width: 100%;
+    //         img {
+    //             width: 78px;
+    //             filter: brightness(0) invert(1);
+    //         }
+    //     }
+    //     .nav {
+    //         display: flex;
+    //         align-items: center;
+    //         flex: 1;
+    //         width: 100%;
+    //         a {
+    //             display: block;
+    //             padding-left: 32px;
+    //             width: 100%;
+    //             opacity: 0.5;
+    //             font-size: 18px;
+    //             color: $color-wh;
+    //             line-height: 1.78;
+    //             box-sizing: border-box;
+    //             transition: opacity 0.35s;
+    //             &:hover {
+    //                 opacity: 0.75;
+    //             }
+    //         }
+    //         .active {
+    //             a {
+    //                 opacity: 1;
+    //             }
+    //         }
+    //         .divide {
+    //             margin-top: 40px;
+    //         }
+    //         li {
+    //             & + li {
+    //                 margin-top: 20px;
+    //             }
+    //         }
+    //     }
+    //     .btn-normal {
+    //         padding: 0 32px;
+    //         width: 100%;
+    //         color: $color-gray-400;
+    //         text-align: left;
+    //         border: none;
+    //         &:hover {
+    //             color: rgba($color-wh, 0.75);
+    //         }
+    //     }
+    // }
 }
 
 .contents {
-    @include desktop2 {
-        padding-left: 102px;
-    }
+    // @include desktop2 {
+    //     padding-left: 102px;
+    // }
 
     .p-sub:not(.p-history, .p-membership, .p-book) & {
-        @include t-mobile {
+        // @include t-mobile {
             position: relative;
             &::after {
                 content: "";
@@ -302,7 +307,7 @@
                 height: 87px;
                 background-image: linear-gradient(to bottom, rgba(27, 28, 28, 0) 0%, $color-gray-100 100%);
             }
-        }
+        // }
     }
 }
 
@@ -331,7 +336,7 @@
         display: inline-block;
     }
 
-    @include t-mobile {
+    // @include t-mobile {
         padding: 24px 20px;
         font-size: 12px;
         &-inner {
@@ -370,7 +375,7 @@
                 vertical-align: middle;
             }
         }
-    }
+    // }
     @include tablet {
         &-wrap {
             margin: 0 auto;
@@ -381,55 +386,55 @@
             max-width: 770px;
         }
     }
-    @include desktop2 {
-        &-wrap {
-            position: relative;
-            margin: 0 auto;
-            padding: 24px 0;
-            max-width: 970px;
-        }
-        .btn-top {
-            position: absolute;
-            top: 24px;
-            right: 0;
-        }
-        &-inner {
-            display: flex;
-            align-items: flex-start;
-        }
-        font-size: 14px;
-        .details {
-            dl {
-               display: flex;
-               gap: 36px;
-               margin-left: 60px;
-            }
-            .copyright {
-                margin: 16px 0 0 60px;
-            }
-        }
-        &-logo {
-            padding-top: 20px;
-            // width: 200px;
-            img {
-                // width: 77px;
-                // filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
-            }
-        }
-        .logo-en {
-            margin-top: -2px;
-            width: 72px;
-            line-height: 1;
-            img {
-                width: 100%;
-                vertical-align: middle;
-            }
-        }
-        .logo-opening {
-            margin-top: 6px;
-            width: 56px;
-        }
-    }
+    // @include desktop2 {
+    //     &-wrap {
+    //         position: relative;
+    //         margin: 0 auto;
+    //         padding: 24px 0;
+    //         max-width: 970px;
+    //     }
+    //     .btn-top {
+    //         position: absolute;
+    //         top: 24px;
+    //         right: 0;
+    //     }
+    //     &-inner {
+    //         display: flex;
+    //         align-items: flex-start;
+    //     }
+    //     font-size: 14px;
+    //     .details {
+    //         dl {
+    //            display: flex;
+    //            gap: 36px;
+    //            margin-left: 60px;
+    //         }
+    //         .copyright {
+    //             margin: 16px 0 0 60px;
+    //         }
+    //     }
+    //     &-logo {
+    //         padding-top: 20px;
+    //         // width: 200px;
+    //         img {
+    //             // width: 77px;
+    //             // filter: invert(42%) sepia(0%) saturate(0%) hue-rotate(166deg) brightness(92%) contrast(88%);
+    //         }
+    //     }
+    //     .logo-en {
+    //         margin-top: -2px;
+    //         width: 72px;
+    //         line-height: 1;
+    //         img {
+    //             width: 100%;
+    //             vertical-align: middle;
+    //         }
+    //     }
+    //     .logo-opening {
+    //         margin-top: 6px;
+    //         width: 56px;
+    //     }
+    // }
 }
 
 @include t-mobile {
@@ -474,14 +479,14 @@
     }
 }
 
-@include desktop2 {
-    .PC-IB {
-        display: inline-block;
-    }
-    .PC-B {
-        display: block;
-    }
-    .OMO-B, .MO-B, .MO-IB, .TA-IB, .TA-B {
-        display: none !important;
-    }
-}
+// @include desktop2 {
+//     .PC-IB {
+//         display: inline-block;
+//     }
+//     .PC-B {
+//         display: block;
+//     }
+//     .OMO-B, .MO-B, .MO-IB, .TA-IB, .TA-B {
+//         display: none !important;
+//     }
+// }

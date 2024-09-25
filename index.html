@@ -4,56 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="robots" content="index,follow"> 
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.baropnng.com/_resources/favicon/favicon_red.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.baropnng.com/_resources/favicon/favicon_red_16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.baropnng.com/_resources/favicon/favicon_red_32.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://www.baropnng.com/_resources/favicon/favicon_red_144.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://www.baropnng.com/_resources/favicon/favicon_red_72.png">
-    <meta name="msapplication-TileImage" content="https://www.baropnng.com/_resources/favicon/favicon_red_144.png">
-    <title>OPNNG</title>
-    <meta name="description" content="오프닝은 ‘취향을 여는 공간'이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 ‘와인과 미술'이라는 취향을 선보이는 공간입니다."> 
-    <meta property="og:title" content="OPNNG">
-    <meta property="og:url" content="https://www.baropnng.com/">
-    <meta property="og:image" content="https://www.baropnng.com/_resources/images/preview.jpg">
-    <meta property="og:description" content="오프닝은 ‘취향을 여는 공간'이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 ‘와인과 미술'이라는 취향을 선보이는 공간입니다.">
-    <meta property="og:keyword" content="오프닝, OPNNG, 와인, 바, 와인바, 와인바오프닝, 레드와인, 화이트와인, 샴페인, 파인다이닝, 논현, 청담, 압구정">
-    <meta name="naver-site-verification" content="d6c677329da3bea68ebe965513be3dc70fd0eef9" />
+    <meta name="robots" content="noindex,nofollow"> 
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    <link rel="apple-touch-icon" sizes="72x72" href="">
+    <meta name="msapplication-TileImage" content="">
+    <title>김도희 홍진화</title>
+    <meta name="description" content=""> 
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta property="og:keyword" content="">
+    <meta name="naver-site-verification" content="" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,500&family=Noto+Serif+KR:wght@200;300;400;500;700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/variable/woff2/SUITE-Variable.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./_resources/css/common.css">
     <script src="./_resources/js/lib/vue.min.js"></script>
-    <script src="./_resources/js/lib/i18next.min.js"></script>
-    <script src="./_resources/js/locale.js"></script>
-    <script src="./_resources/js/ga.js"></script>
+    <!-- <script src="./_resources/js/lib/i18next.min.js"></script>
+    <script src="./_resources/js/locale.js"></script> -->
+
 </head>
 <body>
     <div class="wrap p-main" id="wrap">
         <header class="header" id="header">
             <div class="header-inner">
                 <nav class="nav font-serif" id="navigation">
-                    <header class="nav-header MO-B">
+                    <header class="nav-header">
                         <button class="btn-icon hamberger e-menu" title="메뉴 보기"><span class="bar"></span></button>
-                        <div class="logo"><img src="./_resources/images/logo.svg" alt="OPNNG"></div>
+                        <h1 class="logo font-serif">저희 결혼합니다</h1>
                     </header>
                     <div class="nav-inner">
                         <div class="spread">
                             <ul class="menu">
-                                <li><a href="#opnng">OPNNG</a></li>
-                                <li><a href="#wine">Wine</a></li>
-                                <li><a href="#cuisine">Cuisine</a></li>
-                                <li><a href="#art">Art</a></li>
-                                <li><a href="#history">History</a></li>
-                                <li><a href="#membership">Membership</a></li>
-                                <li class="divide"><a href="#book">Book</a></li>
-                                <li><a href="https://www.instagram.com/bar_opnng/" target="_blank">Instagram</a></li>
+                                <li><a href="#videoWrap">첫화면</a></li>
+                                <li><a href="#date">날짜</a></li>
+                                <li><a href="#photo">사진</a></li>
                             </ul>
                         </div>
-                        <p class="foot MO-B">&copy;copyright all rights reserved OPNNG</p>
                     </div>
                 </nav>
-                <h1 class="logo"><a href="/"><img src="./_resources/images/logo.svg" alt="OPNNG"></a></h1>
-                <button class="btn btn-normal b-200 font-serif" :class="{ 'active-kr': $i18n.locale === 'ko', 'active-en': $i18n.locale === 'en'}" type="button" @click="changeLocale()"><span class="kr">Kr</span>/<span class="en">En</span></button>
+                <!-- <h1 class="logo font-serif"><a href="/">저희 결혼합니다</a></h1> -->
             </div>
         </header>
 
@@ -62,234 +56,108 @@
                 <div class="video-wrapper" id="videoWrap">
                     <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
                     <video preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == 0}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_01.mp4" type="video/mp4">
-                        <img src="./_resources/images/img_poster_mo_01.jpg" alt="">
+                        <source src="./_resources/video/main_01.mp4" type="video/mp4">
+                        <img src="./_resources/video/img_poster_01.jpg" alt="">
                     </video>
                     <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 1}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_02.mp4" type="video/mp4">
+                        <source src="./_resources/video/main_02.mp4" type="video/mp4">
                     </video>
                     <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 2}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_03.mp4" type="video/mp4">
+                        <source src="./_resources/video/main_03.mp4" type="video/mp4">
                     </video>
                     <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 3}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_04.mp4" type="video/mp4">
+                        <source src="./_resources/video/main_04.mp4" type="video/mp4">
                     </video>
                     <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 4}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_05.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 5}">
-                        <source src="https://kr.object.ncloudstorage.com/oos/opnng/video_mo_06.mp4" type="video/mp4">
+                        <source src="./_resources/video/main_05.mp4" type="video/mp4">
                     </video>
                 </div>
-                <p class="copy font-serif"><span v-html="$t('VISUAL.DESC1')">가능하면</span><span v-html="$t('VISUAL.DESC2')">취향을 갖지 마세요.</span><span class="bar"> </span><strong v-html="$t('VISUAL.DESC3')">출구가 없으니까요.</strong></p>
+                <p class="copy font-serif"><span>15년 만남의 결실을 </span><span>맺으려 합니다.</span><span class="bar"> </span><strong>드디어 결혼 합니다.</strong></p>
             </section>
 
             <main class="contents" id="contents">
-                <!-- opnng -->
-                <section class="section section-opnng" id="opnng">
+                <!-- date -->
+                <section class="section section-date" id="date">
                     <div class="section-inner">
                         <div class="content">
-                            <h2 class="section-title"><span>OPNNG <span class="text-lowercase">is</span></span> <strong>Opening</strong></h2>
+                            <h2 class="section-title"><span>인사</span></h2>
                             <div class="description">
-                                <p class="head-desc" v-html="$t('OPNNG.DESC1')">오프닝은 ‘취향을 여는 공간'이라는 테마를 가진 와인바로 인류가 유구한 역사를 통해 즐겨왔던 <br class="PC-B">‘와인과 미술'이라는 취향을 선보이는 공간입니다.</p>
-                                <p class="head-desc" v-html="$t('OPNNG.DESC2')">오프닝은 500여종의 와인을 소개하고 있으며, 또한, 와인과 함께 즐기기에 좋은 다양한 식사메뉴를 선보이고 있습니다.</p>
-                                <p class="head-desc" v-html="$t('OPNNG.DESC3')">이와 함께, 국내외 아티스트들의 작품들을 공간을 통해 전시하고 있으며, 이를 통해 미식과 예술을 동시에 즐길 수 있는 경험을 제공하고 있습니다.</p>
-                                <p class="head-desc" v-html="$t('OPNNG.DESC4')">점점 개인의 취향이 고도화 되어가는 현대 사회에서 미식과 예술을 동시에 즐길 수 있는 오프닝이라는 와인바는 반드시 태어났어야 하는 필연적 공간이라고 생각합니다.</p>
-                                <p class="head-desc" v-html="$t('OPNNG.DESC5')">오랫동안 존재하겠습니다.</p>
+                                <p class="head-desc">작은 인연으로 만나 연인이 된 저희가 이제는 더 큰 열매를 맺고자 합니다.</p>
+                                <p>인생의 중요하고 소중한 날 감사한 분들을 모시는 것이 도리인 줄 아오나<br><strong>가족들만의 작은 결혼식</strong>을 하기로 뜻을 모았습니다.</p>
+                                <p>함께 모시지 못함을 송구스럽게 생각합니다.</p>
+                                <p>따뜻한 격려로 축복해 주시어 힘찬 출발의 디딤이 되어 주십시오.</p>
                             </div>
-                            <div class="btn-area MO-B">
-                                <a href="https://app.catchtable.co.kr/ct/shop/bar_opnng" target="_blank" class="btn btn-primary">BOOK</a>
-                                <a href="https://www.instagram.com/bar_opnng/" target="_blank" class="btn btn-secondary">INSTAGRAM</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
-                <!-- wine -->
-                <section class="section section-wine" id="wine">
-                    <div class="section-inner">
-                        <div class="content">
-                            <h2 class="section-title">Wine</h2>
-                            <div class="description">
-                                <p class="head-desc" v-html="$t('WINE.DESC1')">오프닝은 전문 소믈리에를 통해서 엄선된 <br class="PC-B">500여종의 와인을 선보입니다.</p>
-                                <p v-html="$t('WINE.DESC2')">모든 와인들은, 오프닝만의 전용 타블렛 PC 메뉴판을 통하여, 품종, 종류, 지역, 특징(탄닌 / 바디감 / 당도 등)으로 고객이 직접 필터링 할 수 있습니다.</p>
-                                <p v-html="$t('WINE.DESC3')">소믈리에의 추천을 통해 와인을 추천받을 수 있음은 물론이고, <br class="PC-B">오프닝만의 메뉴판을 통해서 고객이 개인의 취향에 맞는 와인을 직접 고를 수 있는 새로운 경험을 선사합니다.</p>
-                            </div>
-                        </div>
-                        <div class="image-list">
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_wine_01.jpg" alt="" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_wine_02.jpg" alt="" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_wine_03.jpg" alt="와인 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_wine_04.jpg" alt="와인 이미지" loading="lazy"></figure>
-                                <p class="text-move font-serif"><strong>Open your own taste</strong><span>We provide taste</span></p>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_wine_05.jpg" alt="와인 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_wine_06.jpg" alt="와인 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_wine_07.jpg" alt="와인 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_wine_08.jpg" alt="와인 이미지" loading="lazy"></figure>
+                            <div class="benefit-list">
+                                <h3 class="title">홍진화</h3>
+                                <ul class="font-serif">
+                                    <li class="one"><span>故홍승록 &middot; 지미영의 장남</span></li>
+                                </ul>
+                                <h3 class="title">김도희</h3>
+                                <ul class="font-serif">
+                                    <li class="one"><span>김용연 &middot; 윤성숙의 장녀</span></li>
+                                </ul>
+                                <p class="font-serif wedding-date">2024년 11월 09일<br>가족들만의 작은 결혼식</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- cuisine -->
-                <section class="section section-cuisine" id="cuisine">
+                <section class="section section-cuisine" id="photo">
                     <div class="section-inner">
                         <div class="content">
-                            <h2 class="section-title">Cuisine</h2>
+                            <h2 class="section-title">인연, <strong class="text-small">그리고</strong> 연인</h2>
                             <div class="description">
-                                <p class="head-desc" v-html="$t('CUISINE.DESC1')">오프닝의 메뉴들은 한끼의 식사로 충분한 것들과, 와인을 보다 맛있게 <br class="PC-B">즐길 수 있도록 돕는 안주류 등으로 구성되어 있습니다.</p>
-                                <p v-html="$t('CUISINE.DESC2')">크게, 스몰디쉬 / 파스타 / 스테이크 / 치즈 / 샤퀴테리 / 디저트로 구성된 오프닝의 모든 메뉴들은 <br class="PC-B">‘와인과의 조화‘를 무엇보다 지향하고 있으며, 조화를 넘어서 와인도 음식도 더 맛있을 수 있는 궁극의 마리아쥬를 목표로 <br class="PC-B">하고 있습니다.</p>
+                                <p class="head-desc">2010년 10월 8일부터 이어진 인연</p>
+                                <br>
+                                <p>크고 작은 다툼 없이 서로의 의견을 나누고 조율하며 긴 시간을 함께 해왔습니다.</p>
+                                <p>신중했던 만큼 더욱 행복한 삶을 꾸려 나가려 합니다.</p>
+                                <br>
+                                <p>"결혼은 언제 하냐?"</p>
+                                <br>
+                                <p>가장 궁금해 하셨던 질문</p>
+                                <p><strong>2024년 11월 09일</strong> 드디어 합니다.</p>
                             </div>
                         </div>
                         <div class="image-list">
                             <div class="one">
-                                <figure><img src="./_resources/images/img_cuisine_01.jpg" alt="음식 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_cuisine_02.jpg" alt="음식 이미지" loading="lazy"></figure>
-                                <p class="text-move font-serif"><strong>Open your own taste</strong><span>We provide taste</span></p>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_cuisine_03.jpg" alt="음식 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_cuisine_04.jpg" alt="음식 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_cuisine_05.jpg" alt="음식 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_cuisine_06.jpg" alt="음식 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_cuisine_07.jpg" alt="음식 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_cuisine_08.jpg" alt="음식 이미지" loading="lazy"></figure>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- art -->
-                <section class="section section-art" id="art">
-                    <div class="section-inner">
-                        <div class="content">
-                            <h2 class="section-title">Art</h2>
-                            <div class="description">
-                                <p class="head-desc" v-html="$t('ART.DESC1')">오프닝은 오너가 수집하고 있는 다양한 미술 작품들을 <br class="PC-B">공간을 통해서 전시합니다.</p>
-                                <p v-html="$t('ART.DESC2')">오프닝은 상시 작품들을 공간에 설치하여 선보이고 있으며, 이와 별도로 연 1~2회 소장품만으로 구성된 전시회를 개최하고 있습니다.</p>
-                                <p v-html="$t('ART.DESC3')">전문 갤러리나 미술관이 아닌, 공간을 가진 컬렉터가 선보이는 소장전으로, 오프닝 전시만의 전시 소개글인 ‘수집의 변’을 통해 주제를 <br class="PC-B">전달하고 있습니다.</p>
-                            </div>
-                        </div>
-                        <div class="image-list">
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_art_01.jpg" alt="아트 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_art_02.jpg" alt="아트 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_art_03.jpg" alt="아트 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_art_04.jpg" alt="아트 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_art_05.jpg" alt="아트 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_art_06.jpg" alt="아트 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <figure><img src="./_resources/images/img_art_07.jpg" alt="아트 이미지" loading="lazy"></figure>
-                                <figure><img src="./_resources/images/img_art_08.jpg" alt="아트 이미지" loading="lazy"></figure>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- history -->
-                <section class="section section-history" id="history">
-                    <div class="section-inner">
-                        <div class="content">
-                            <h2 class="section-title">History</h2>
-                        </div>
-                        <div class="history-list font-serif">
-                            <div class="one">
-                                <dl>
-                                    <div>
-                                        <dt v-html="$t('HISTORY.DATE1')">2020년 11월</dt>
-                                        <dd v-html="$t('HISTORY.DESC1')">주식회사 테이스트 앤드 테이스트 창립</dd>
+                                <p class="text-move font-serif"><strong>We are gonna get marry</strong><span>Congratulate us</span></p>
+                                <div class="swiper swiper1">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201101.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201104.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201105.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201205.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201304.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201306.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201404.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201404_02.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201405.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201503.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201507.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201604.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201606.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201610.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201710.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201806.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201806_02.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20200801.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20220409.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20220423.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20220612.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20220918.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20230526.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20230630.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20230804.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_201806_02.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20231029.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20231029_02.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20231128.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20240229.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="./_resources/images/img_20240621.jpg" alt=""></div>
                                     </div>
-                                    <div>
-                                        <dt v-html="$t('HISTORY.DATE2')">2021년 7월</dt>
-                                        <dd v-html="$t('HISTORY.DESC2')">와인바 오프닝 오픈</dd>
-                                    </div>
-                                </dl>
-                                <figure><img src="./_resources/images/img_history_01.jpg" alt="테이스트앤테이스트 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <dl>
-                                    <div>
-                                        <dt v-html="$t('HISTORY.DATE3')">2022년 4월</dt>
-                                        <dd v-html="$t('HISTORY.DESC3')">오프닝 1st Exhibition SPRING PARADOX 개최</dd>
-                                    </div>
-                                </dl>
-                                <figure><img src="./_resources/images/img_history_02.jpg" alt="오프닝 1st Exhibition SPRING PARADOX 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <dl>
-                                    <div>
-                                        <dt v-html="$t('HISTORY.DATE4')">2022년 7월</dt>
-                                        <dd v-html="$t('HISTORY.DESC4')">2023 미쉐린 가이드 서울 등재(선발표)</dd>
-                                    </div>
-                                </dl>
-                                <figure><img src="./_resources/images/img_history_03.jpg" alt="2023 미쉐린 가이드 서울 이미지" loading="lazy"></figure>
-                            </div>
-                            <div class="one">
-                                <dl>
-                                    <div>
-                                        <dt v-html="$t('HISTORY.DATE5')">2022년 9월</dt>
-                                        <dd v-html="$t('HISTORY.DESC5')">오프닝 2nd Exhibition THE PRESENT 개최</dd>
-                                    </div>
-                                </dl>
-                                <figure><img src="./_resources/images/img_history_04.jpg" alt="오프닝 2nd Exhibition THE PRESENT 이미지" loading="lazy"></figure>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- membership -->
-                <section class="section section-membership" id="membership">
-                    <div class="section-inner">
-                        <div class="content">
-                            <h2 class="section-title">Membership</h2>
-                            <div class="description">
-                                <p class="head-desc"><strong v-html="$t('MEMBERSHIP.DESC1')">오프닝은 오프닝을 보다 풍부하게 이용하실 수 있는 멤버쉽 프로그램을 <br class="PC-B">운영하고 있습니다.</strong></p>
-                                <p class="head-desc"><strong v-html="$t('MEMBERSHIP.DESC2')">멤버쉽 프로그램의 상담은 유선 (☎ 02)2088-5844) 을 통해서 가능합니다.</strong></p>
-                                <p v-html="$t('MEMBERSHIP.DESC3')">멤버쉽 프로그램 이용시의 베네핏은 아래와 같습니다.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-list">
-                            <h3 class="title">BENEFIT</h3>
-                            <ul class="font-serif">
-                                <li class="one"><i class="icon benefit private"></i><span v-html="$t('MEMBERSHIP.BENEFITS.DESC1')">프라이빗 룸 이용</span></li>
-                                <li class="one"><i class="icon benefit corkage"></i><span v-html="$t('MEMBERSHIP.BENEFITS.DESC2')">방문 당 1병 콜키지 가능(750ml 기준이며 업장에서 빈티지까지 동일한 <br class="PC-B">와인을 판매 중인 경우에는 콜키지가 불가능합니다.)</span></li>
-                                <li class="one"><i class="icon benefit gift"></i><span v-html="$t('MEMBERSHIP.BENEFITS.DESC3')">오프닝 오리지널 기프트 제공</span></li>
-                                <li class="one"><i class="icon benefit event"></i><span v-html="$t('MEMBERSHIP.BENEFITS.DESC4')">오프닝 멤버쉽 전용 이벤트 참석가능</span></li>
-                                <li class="one"><i class="icon benefit keep"></i><span v-html="$t('MEMBERSHIP.BENEFITS.DESC5')">개인 와인 보관서비스</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- book -->
-                <section class="section section-book" id="book">
-                    <div class="section-inner">
-                        <div class="content">
-                            <h2 class="section-title">Book</h2>
-                            <div class="description">
-                                <p v-html="$t('BOOK.DESC1')">오프닝의 예약은 캐치테이블을 통해서 이루어지고 있습니다. 다만, 5인 이상 예약 시에는 유선(02-2088-5844)을 통한 예약을 진행하고 있습니다. </p>
-                                <p v-html="$t('BOOK.DESC2')">오프닝은 노키즈 존이며, 이용 시 4인 이하 기준 750ml 와인 1병 이상을 주문해 주셔야 합니다. 또한 크리스마스, 발렌타인 데이 등의 특별한 날에는 별도 코스 메뉴를 운영하고 있으며, 운영 방식은 사전에 별도 고지하고 있습니다.</p>
-                            </div>
-                            <div class="btn-area">
-                                <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-normal MO-IB">Reservation guide for foreigners</a>
-                                <a href="./_resources/documents/booking_guide.pdf" target="_blank" class="btn btn-underline PC-B">Reservation guide for foreigners</a>
-                                <a href="https://app.catchtable.co.kr/ct/shop/bar_opnng" target="_blank" class="btn btn-tertiary" v-html="$t('BOOK.BUTTON')">캐치테이블 예약하기 ></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,23 +169,14 @@
                 <div class="footer-wrap">
                     <a href="javascript:;" class="btn-top font-serif" onclick="window.scrollTo(0,0);"><i class="icon top"></i>TOP</a>
                     <div class="footer-inner">
-                        <h3 class="footer-logo"><strong class="logo-ko">오프닝</strong><strong class="logo-en"><img src="./_resources/images/logo_txt.svg" alt="OPNNG"></strong><span class="logo-opening"><img src="./_resources/images/logo_opening.svg" alt="opening"></span></h3>
+                        <h3 class="footer-logo font-serif"><strong class="logo-ko">김도희, 홍진화의 결혼</strong></h3>
                         <div class="details font-serif">
                             <dl>
                                 <div>
-                                    <dt>Address</dt>
-                                    <dd v-html="$t('ADDRESS')">서울시 강남구 도산대로 34길 22 빌딩 모노폴 지하 1층 OPNNG</dd>
-                                </div>
-                                <div>
-                                    <dt>Contact</dt>
-                                    <dd><a href="tel:02-2088-5844">02-2088-5844</a></dd>
-                                </div>
-                                <div>
-                                    <dt>Instagram</dt>
-                                    <dd><a href="https://www.instagram.com/bar_opnng/" target="_blank">@bar_opnng</a></dd>
+                                    <dt>날짜</dt>
+                                    <dd>2024.11.09</dd>
                                 </div>
                             </dl>
-                            <p class="copyright">&copy;all rights reserved OPNNG</p>
                         </div>
                     </div>
                 </div>
@@ -325,40 +184,41 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./_resources/js/ui.js"></script>
+
     <script>
+
         document.addEventListener('DOMContentLoaded', () => {
             let _html = document.querySelector('html');
             let lang = _html.getAttribute('lang');
 
             const videoList = {
                 'mo': [
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_01.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_02.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_03.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_04.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_05.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_mo_06.mp4'},
+                    {src: './_resources/video/main_01.mp4'},
+                    {src: './_resources/video/main_02.mp4'},
+                    {src: './_resources/video/main_03.mp4'},
+                    {src: './_resources/video/main_04.mp4'},
+                    {src: './_resources/video/main_05.mp4'},
                 ],
                 'pc': [
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_01.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_02.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_03.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_04.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_05.mp4'},
-                    {src: 'https://kr.object.ncloudstorage.com/oos/opnng/video_pc_06.mp4'},
+                    {src: './_resources/video/main_01.mp4'},
+                    {src: './_resources/video/main_02.mp4'},
+                    {src: './_resources/video/main_03.mp4'},
+                    {src: './_resources/video/main_04.mp4'},
+                    {src: './_resources/video/main_05.mp4'},
                 ]
             };
 
-            const i18n = new VueI18n({ 
-                fallbackLng: 'ko',
-                locale: this.currentLocale,
-                messages: messages
-            });
+            // const i18n = new VueI18n({ 
+            //     fallbackLng: 'ko',
+            //     locale: this.currentLocale,
+            //     messages: messages
+            // });
 
             let vm = new Vue({
                 el: '#wrap',
-                i18n: i18n,
+                // i18n: i18n,
                 data: () => { return {
                     currentLocale: localStorage.getItem("locale") || 'ko',
                     VIDEO: videoList,
@@ -366,43 +226,47 @@
                     shuffleIndex: [],
                     videoCount: -1,
                     currentViewType:'mo',
-                    isEndedBefore: [false, false, false, false, false, false],
+                    isEndedBefore: [false, false, false, false, false],
                     videoListEl: [],
                     isLargeDivce: false,
                 }},
                 methods: {
                     changeLocale() {
                         _html = document.querySelector('html');
-                        lang = _html.getAttribute('lang');
+                        // lang = _html.getAttribute('lang');
 
-                        this.$i18n.locale = this.currentLocale;
-                        this.currentLocale === 'ko' ? this.currentLocale = 'en' : this.currentLocale = 'ko';
+                        // this.$i18n.locale = this.currentLocale;
+                        // this.currentLocale === 'ko' ? this.currentLocale = 'en' : this.currentLocale = 'ko';
 
-                        this.setLocale(this.currentLocale);
+                        // this.setLocale(this.currentLocale);
 
-                        _html.setAttribute('lang', this.currentLocale);
+                        // _html.setAttribute('lang', this.currentLocale);
                     },
                     setLocale(locale) {
-                        localStorage.setItem('locale', locale);
-                        this.$i18n.locale = locale;
+                        // localStorage.setItem('locale', locale);
+                        // this.$i18n.locale = locale;
                     },
                     checkWidth() {
                         let winWidth = window.innerWidth;
 
-                        if(winWidth < 1280) {
-                            this.isLargeDivce = false;
-                            this.currentViewType = 'mo';
-                            this.pickedVideos = this.VIDEO.mo;
-                        } else {
-                            this.isLargeDivce = true;
-                            this.currentViewType = 'pc';
-                            this.pickedVideos = this.VIDEO.pc;
-                        }
+                        this.isLargeDivce = false;
+                        this.currentViewType = 'mo';
+                        this.pickedVideos = this.VIDEO.mo;
+
+                        // if(winWidth < 1280) {
+                        //     this.isLargeDivce = false;
+                        //     this.currentViewType = 'mo';
+                        //     this.pickedVideos = this.VIDEO.mo;
+                        // } else {
+                        //     this.isLargeDivce = true;
+                        //     this.currentViewType = 'pc';
+                        //     this.pickedVideos = this.VIDEO.pc;
+                        // }
 
                         [].map.call( this.videoListEl, (item, i) => {
                             item.querySelector('source').src = this.pickedVideos[i].src;
                         });
-                        this.videoListEl[0].querySelector('img').src = 'https://www.baropnng.com/_resources/images/img_poster_' + this.currentViewType + '_01.jpg';
+                        // this.videoListEl[0].querySelector('img').src = './_resources/video/img_poster_' + this.currentViewType + '_01.jpg';
                     },
                     shuffle(arr) {
                         return arr.sort(() => Math.floor( Math.random() - 0.5) );
@@ -410,7 +274,7 @@
                     createPlayList() {
                         this.shuffleIndex = [];
                         
-                         let copiedVideos = [1, 2, 3, 4, 5];
+                         let copiedVideos = [1, 2, 3, 4];
 
                         this.shuffleIndex[this.shuffleIndex.length] = 0;
                         copiedVideos = this.shuffle(copiedVideos);
@@ -472,17 +336,35 @@
                         this.createPlayList();
                         this.playVideo(this.videoCount);
                     },
+                    initSwiper() {
+                        const mySwiper = new Swiper('.swiper1', {
+                            // spaceBetween: 30,
+                            centeredSlides: true,
+                            autoplay: {
+                                delay: 2000,
+                                disableOnInteraction: false,
+                            },
+                            loop: true,
+                            speed: 1000,
+                            // effect: "fade",
+                            // autoHeight: true,
+                            slidesPerView: "auto",
+                        });
+
+                        mySwiper.init();
+                    }
                 },
                 created() {
-                    this.$i18n.locale = this.currentLocale;
+                    // this.$i18n.locale = this.currentLocale;
                 },
                 mounted() {
-                    _html.setAttribute('lang', this.currentLocale);
+                    // _html.setAttribute('lang', this.currentLocale);
 
                     this.videoListEl = document.querySelectorAll('#videoWrap video');
                     
                     this.createInit();
                     this.detectVideoStatus();
+                    this.initSwiper();
 
                     window.addEventListener('resize', () => {
                         let winWidth = window.innerWidth;
@@ -494,6 +376,7 @@
                 },
             });
         });
+
     </script>
 </body>
 </html>
