@@ -24,8 +24,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./resources/css/common.css">
     <script src="./resources/js/lib/vue.min.js"></script>
-    <!-- <script src="./resources/js/lib/i18next.min.js"></script>
-    <script src="./resources/js/locale.js"></script> -->
 
 </head>
 <body>
@@ -54,19 +52,9 @@
         <div class="container" id="container">
             <section class="section-visual">
                 <div class="video-wrapper" id="videoWrap">
-                    <!-- 사파리 랜더링 이슈로 for 문으로 생성 하면 안됨 -->
-                    <video preload="auto" muted playsinline :class="{play : (shuffleIndex[videoCount]) == 0}">
-                        <source src="./resources/video/main_01.mp4" type="video/mp4">
+                    <video preload="auto" muted playsinline autoplay loop>
+                        <source src="./resources/video/main.mp4" type="video/mp4">
                         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbk924x%2FbtsJK7oAOEc%2FZStMUJusHqPUClt5I0yhe0%2Fimg.jpg" alt="">
-                    </video>
-                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 1}">
-                        <source src="./resources/video/main_02.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 2}">
-                        <source src="./resources/video/main_03.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline :class="{play : (shuffleIndex[videoCount]) == 3}">
-                        <source src="./resources/video/main_04.mp4" type="video/mp4">
                     </video>
                 </div>
                 <p class="copy font-serif"><span>15년 만남의 결실을 </span><span>맺으려 합니다.</span><span class="bar"> </span><strong>드디어 결혼 합니다.</strong></p>
@@ -190,135 +178,25 @@
             let _html = document.querySelector('html');
             let lang = _html.getAttribute('lang');
 
-            // const videoList = {
-            //     'mo': [
-            //         {src: './resources/video/main_01.mp4'},
-            //         {src: './resources/video/main_02.mp4'},
-            //         {src: './resources/video/main_03.mp4'},
-            //         {src: './resources/video/main_04.mp4'},
-            //     ],
-            //     'pc': [
-            //         {src: './resources/video/main_01.mp4'},
-            //         {src: './resources/video/main_02.mp4'},
-            //         {src: './resources/video/main_03.mp4'},
-            //         {src: './resources/video/main_04.mp4'},
-            //     ]
-            // };
-
-            // const i18n = new VueI18n({ 
-            //     fallbackLng: 'ko',
-            //     locale: this.currentLocale,
-            //     messages: messages
-            // });
-
             let vm = new Vue({
                 el: '#wrap',
                 // i18n: i18n,
                 data: () => { return {
                     currentLocale: localStorage.getItem("locale") || 'ko',
-                    // VIDEO: videoList,
-                    // pickedVideos: [],
-                    shuffleIndex: [],
-                    videoCount: -1,
                     currentViewType:'mo',
-                    isEndedBefore: [false, false, false, false],
-                    videoListEl: [],
                     isLargeDivce: false,
                 }},
                 methods: {
                     changeLocale() {
                         _html = document.querySelector('html');
-                        // lang = _html.getAttribute('lang');
-
-                        // this.$i18n.locale = this.currentLocale;
-                        // this.currentLocale === 'ko' ? this.currentLocale = 'en' : this.currentLocale = 'ko';
-
-                        // this.setLocale(this.currentLocale);
-
-                        // _html.setAttribute('lang', this.currentLocale);
                     },
                     setLocale(locale) {
-                        // localStorage.setItem('locale', locale);
-                        // this.$i18n.locale = locale;
                     },
                     checkWidth() {
                         let winWidth = window.innerWidth;
 
                         this.isLargeDivce = false;
                         this.currentViewType = 'mo';
-                        // this.pickedVideos = this.VIDEO.mo;
-
-                        // if(winWidth < 1280) {
-                        //     this.isLargeDivce = false;
-                        //     this.currentViewType = 'mo';
-                        //     this.pickedVideos = this.VIDEO.mo;
-                        // } else {
-                        //     this.isLargeDivce = true;
-                        //     this.currentViewType = 'pc';
-                        //     this.pickedVideos = this.VIDEO.pc;
-                        // }
-
-                        // [].map.call( this.videoListEl, (item, i) => {
-                            // item.querySelector('source').src = this.pickedVideos[i].src;
-                        // });
-                        // this.videoListEl[0].querySelector('img').src = './resources/video/img_poster_' + this.currentViewType + '_01.jpg';
-                    },
-                    shuffle(arr) {
-                        return arr.sort(() => Math.floor( Math.random() - 0.5) );
-                    },
-                    createPlayList() {
-                        this.shuffleIndex = [];
-                        
-                         let copiedVideos = [1, 2, 3];
-
-                        this.shuffleIndex[this.shuffleIndex.length] = 0;
-                        // copiedVideos = this.shuffle(copiedVideos);
-                        Array.prototype.push.apply(this.shuffleIndex, copiedVideos);
-                        console.log(this.shuffleIndex);
-                    },
-                    playVideo(currentIndex) {
-                        this.$nextTick(() => {
-                            // this.playPromise = this.videoListEl[this.shuffleIndex[currentIndex]].play();
-                            this.playPromise = this.videoListEl[this.shuffleIndex[currentIndex]].play();
-
-                            if (this.playPromise !== undefined) {
-                                this.playPromise.then(_ => {
-                                })
-                                .catch(error => {
-                                    // console.log('play error', error);
-                                    // this.videoListEl[this.shuffleIndex[currentIndex]].play();
-                                    this.videoListEl[this.shuffleIndex[currentIndex]].play();
-                                });
-                            }
-                        });
-                    },
-                    detectVideoStatus() {
-                        let leng = this.shuffleIndex.length - 1;
-
-                        [].map.call( this.videoListEl, item => item.addEventListener('ended', () => {
-                            if(this.videoCount < leng) {
-                                this.videoCount++;
-                            } else if(this.videoCount == leng) {
-                                // this.createPlayList();
-                                this.videoCount = 0;
-                            }
-                        }));
-
-                        [].map.call( this.videoListEl, (item, i) => item.addEventListener('timeupdate', () => {
-                            if (this.videoCount == -1 && i == 0 && item.readyState > 3) {
-                                this.videoCount = 0;
-                            }
-                            if(item.duration - item.currentTime <= 1 && this.isEndedBefore[i] == false) {
-                                this.isEndedBefore[i] = true;
-                                if (this.videoCount == this.videoListEl.length - 1) {
-                                    this.playVideo(0);
-                                } else {
-                                    this.playVideo(this.videoCount+1);
-                                }
-                            } else if (item.duration - item.currentTime > 1) {
-                                this.isEndedBefore[i] = false;
-                            }
-                        }));
                     },
                     createInit() {
                         let winWidth = window.innerWidth;
@@ -326,13 +204,9 @@
                         if ( (winWidth >= 1280 && this.currentViewType == 'mo') ) {
                             this.checkWidth();
                         }
-                        this.createPlayList();
-                        this.playVideo(0);
                     },
                     resizeInit() {
                         this.checkWidth();
-                        this.createPlayList();
-                        this.playVideo(this.videoCount);
                     },
                     initSwiper() {
                         const mySwiper = new Swiper('.swiper1', {
@@ -353,15 +227,12 @@
                     }
                 },
                 created() {
-                    // this.$i18n.locale = this.currentLocale;
                 },
                 mounted() {
-                    // _html.setAttribute('lang', this.currentLocale);
 
                     this.videoListEl = document.querySelectorAll('#videoWrap video');
                     
                     this.createInit();
-                    this.detectVideoStatus();
                     this.initSwiper();
 
                     window.addEventListener('resize', () => {
